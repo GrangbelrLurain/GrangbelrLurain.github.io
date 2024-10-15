@@ -1,0 +1,192 @@
+{
+  "main": {
+    "id": "1a6ec1ae6d067d37",
+    "type": "split",
+    "children": [
+      {
+        "id": "671bea4515c22e88",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f49547aaf0de4037",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "리액트 18버전의 지리는 신기능 3개 (startTransition 등).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7a93bbbd1f0eaf91",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "React 무한 리랜더링 오류.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fa82ffe0fb2dec8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "React 무한 리랜더링 오류.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7e0525a35509b957",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MVC와 MVP의 차이점.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1bd839fe85592397",
+    "type": "split",
+    "children": [
+      {
+        "id": "355353ed996e7d0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c516a62b7153c9ee",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c2db71a5cb059925",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "23d23e8711dc5858",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cdb9197b9ab54cfc",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f1834c8edc52bb0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "171cb506a98121e7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "리액트 18버전의 지리는 신기능 3개 (startTransition 등).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "977a5b7adfe7ad60",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "리액트 18버전의 지리는 신기능 3개 (startTransition 등).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "edfbe1f3d91e0b31",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "13235268d55ac99a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "리액트 18버전의 지리는 신기능 3개 (startTransition 등).md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false
+    }
+  },
+  "active": "f49547aaf0de4037",
+  "lastOpenFiles": [
+    "React 무한 리랜더링 오류.md",
+    "MVC와 MVP의 차이점.md",
+    "리액트 18버전의 지리는 신기능 3개 (startTransition 등).md",
+    "태그 잘 안 닫으면 생기는 오류.md"
+  ]
+}
