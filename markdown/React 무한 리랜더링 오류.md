@@ -129,6 +129,6 @@ useCallback을 사용하지 않고도 setState를 한 번 호출함으로 해결
 
 > Hook을 사용할 땐 한 번만 업데이트 될 수 있게 조건 설정을 잘 하자 (여러 번 랜더링 되고 경고 메세지가 발생할 수 있다.)
 
-![이제 경고가 안 뜨는 편안한 콘솔 창](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/06546eaa-72fe-4937-944a-34b51dbcaa35/Untitled.png)
+![[Pasted image 20241017005724.png]]
 
 이제 경고가 안 뜨는 편안한 콘솔 창
