@@ -25,7 +25,55 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MVC와 MVP의 차이점.md",
+                "file": "컴포넌트간 느슨하게 연결하기.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b6d5f9c235a53c14",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Next.js에서 Typescript로 AWS S3에 이미지 파일 업로드, 삭제하는 방법.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a471a876b7811430",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "React에서 useState 리렌더링 문제.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b7d6b5bcbbdb9c80",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Git 삭제파일 반영하기.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "60f9494c24926b0a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Next.js - Storybook 오류 해결.md",
                 "mode": "source",
                 "source": false
               }
@@ -68,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -134,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MVC와 MVP의 차이점.md",
+                "file": "Next.js - Storybook 오류 해결.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MVC와 MVP의 차이점.md",
+                "file": "Next.js - Storybook 오류 해결.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MVC와 MVP의 차이점.md"
+                "file": "Next.js - Storybook 오류 해결.md"
               }
             }
           }
@@ -182,8 +230,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,15 +242,19 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "8ae6632d2ee614d5",
+  "active": "60f9494c24926b0a",
   "lastOpenFiles": [
-    "태그 잘 안 닫으면 생기는 오류.md",
-    "컴포넌트간 느슨하게 연결하기.md",
-    "Pasted image 20241017005718.png",
-    "Pasted image 20241017005724.png",
-    "Pasted image 20241017000516.png",
+    "Git 삭제파일 반영하기.md",
+    "Next.js - Storybook 오류 해결.md",
+    "MVC와 MVP의 차이점.md",
     "React 무한 리랜더링 오류.md",
+    "React에서 useState 리렌더링 문제.md",
     "리액트 18버전의 지리는 신기능 3개 (startTransition 등).md",
-    "MVC와 MVP의 차이점.md"
+    "Next.js에서 Typescript로 AWS S3에 이미지 파일 업로드, 삭제하는 방법.md",
+    "컴포넌트간 느슨하게 연결하기.md",
+    "Pasted image 20241017005724.png",
+    "Pasted image 20241017005718.png",
+    "태그 잘 안 닫으면 생기는 오류.md",
+    "Pasted image 20241017000516.png"
   ]
 }
