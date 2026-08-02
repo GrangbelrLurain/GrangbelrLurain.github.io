@@ -39,6 +39,13 @@ export function Hero() {
                 delete-horizon.com
               </a>
             </li>
+            {profile.resumes.map((resume) => (
+              <li key={resume.href}>
+                <a href={resume.href} target="_blank" rel="noreferrer">
+                  {t(resume.label)}
+                </a>
+              </li>
+            ))}
             <li>{t(profile.location)}</li>
           </ul>
         </div>

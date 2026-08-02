@@ -20,6 +20,18 @@ export const profile = {
   location: { kr: '수원 / 서울, 대한민국', en: 'Suwon / Seoul, South Korea' },
   photo: '/images/profile.jpg',
   photoAlt: { kr: '김규연 프로필 사진', en: 'Portrait of Kyuyeon Kim' },
+  resumes: [
+    {
+      href: '/resumes/kyuyeon-kim-ko.html',
+      download: 'kyuyeon-kim-resume-ko.html',
+      label: { kr: '이력서 KO', en: 'Resume KO' },
+    },
+    {
+      href: '/resumes/kyuyeon-kim-en.html',
+      download: 'kyuyeon-kim-resume-en.html',
+      label: { kr: '이력서 EN', en: 'Resume EN' },
+    },
+  ],
   metaDescription: {
     kr: '프론트엔드 리드 & 프로덕트 엔지니어 김규연의 실측 기트 포트폴리오입니다. 모두투어 차세대 웹 파견 FE PL, pnpm/Turborepo 멀티테넌트 모노레포, Rust/Tauri 2 DX 도구, PWA 메쉬 아키텍처.',
     en: 'Portfolio of Kyuyeon Kim — Frontend Lead & Product Engineer. Modetour next-gen FE PL, pnpm/Turborepo multi-tenant monorepo, Rust/Tauri 2 DX tooling, PWA mesh architecture.',
