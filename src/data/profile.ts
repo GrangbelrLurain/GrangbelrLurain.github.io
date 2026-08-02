@@ -79,7 +79,7 @@ export const aboutParagraphs: LocaleText[] = [
 export const projects: Project[] = [
   {
     id: 'horizon-gateway',
-    name: 'horizon-gateway (Watchtower)',
+    name: 'horizon-gateway',
     techLine: 'Rust · Tauri 2 · React · TypeScript · TanStack · Release v2.6.0',
     links: [
       { label: 'Live ↗', href: 'https://gateway.delete-horizon.com' },
@@ -105,7 +105,7 @@ export const projects: Project[] = [
   },
   {
     id: 'horizon-mesh',
-    name: 'horizon-mesh (travel-planer / ViewKit)',
+    name: 'horizon-mesh',
     techLine: 'Turborepo · React · TypeScript · PWA · Cloudflare Pages',
     links: [
       { label: 'Travel ↗', href: 'https://travel.delete-horizon.com/?mode=edit' },
