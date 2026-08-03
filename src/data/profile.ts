@@ -3,16 +3,16 @@ import type { LocaleText, Metric, Project, SkillRow } from './types'
 export const profile = {
   name: { kr: '김규연', en: 'Kyuyeon Kim' } satisfies LocaleText,
   title: {
-    kr: '프론트엔드 리드 · 프로덕트 엔지니어 (4년 5개월 차)',
-    en: 'Frontend Lead · Product Engineer (4+ Years Exp)',
+    kr: '프론트엔드 리드 · FE PL (4년 5개월 차)',
+    en: 'Frontend Lead · FE PL (4+ Years Exp)',
   } satisfies LocaleText,
   tagline: {
     kr: '"도메인이 복잡할수록 구조를 먼저 잡고, 공통 모듈과 빌드·배포 체계로 반복 비용을 줄입니다."',
     en: '"When domains get complex, I start with structure — cutting repeat cost through shared modules and build/release systems."',
   } satisfies LocaleText,
   brandRole: {
-    kr: 'FE PL · Product Eng',
-    en: 'FE Lead · Product Eng',
+    kr: 'FE PL · Frontend Lead',
+    en: 'FE Lead · Frontend PL',
   } satisfies LocaleText,
   email: 'lurain003@gmail.com',
   github: 'https://github.com/GrangbelrLurain',
@@ -33,17 +33,17 @@ export const profile = {
     },
   ],
   metaDescription: {
-    kr: '프론트엔드 리드 & 프로덕트 엔지니어 김규연의 실측 기트 포트폴리오입니다. 모두투어 차세대 웹 파견 FE PL, pnpm/Turborepo 멀티테넌트 모노레포, Rust/Tauri 2 DX 도구, PWA 메쉬 아키텍처.',
-    en: 'Portfolio of Kyuyeon Kim — Frontend Lead & Product Engineer. Modetour next-gen FE PL, pnpm/Turborepo multi-tenant monorepo, Rust/Tauri 2 DX tooling, PWA mesh architecture.',
+    kr: '프론트엔드 리드 · FE PL 김규연 포트폴리오. 모두투어 차세대 웹 FE PL, pnpm/Turborepo 멀티테넌트 모노레포, Rust/Tauri 2 DX, PWA 메쉬.',
+    en: 'Portfolio of Kyuyeon Kim — Frontend Lead · FE PL. Modetour next-gen FE PL, pnpm/Turborepo multi-tenant monorepo, Rust/Tauri 2 DX, PWA mesh.',
   },
 }
 
 export const metrics: Metric[] = [
   {
-    value: '27k+',
+    value: '12→15',
     label: {
-      kr: 'PlatformWeb 팀 레포 규모',
-      en: 'PlatformWeb Team Repo Scale',
+      kr: 'Next.js 메이저 상향 주도',
+      en: 'Next.js Major Upgrade Led',
     },
   },
   {
@@ -54,10 +54,10 @@ export const metrics: Metric[] = [
     },
   },
   {
-    value: '3~5',
+    value: '3',
     label: {
-      kr: 'FE 팀 규모 · PL로 리딩',
-      en: 'FE Team Size · Led as PL',
+      kr: '테넌트 표면 · b2c / onbp / core',
+      en: 'Tenant surfaces · b2c / onbp / core',
     },
   },
   {
@@ -71,8 +71,8 @@ export const metrics: Metric[] = [
 
 export const aboutParagraphs: LocaleText[] = [
   {
-    kr: '안녕하세요. <strong>프론트엔드 리드 & 프로덕트 엔지니어 김규연</strong>입니다.',
-    en: 'I am <strong>Kyuyeon Kim</strong>, a <strong>Frontend Lead & Product Engineer with 4+ years of experience</strong> based in South Korea.',
+    kr: '안녕하세요. <strong>프론트엔드 리드 · FE PL 김규연</strong>입니다.',
+    en: 'I am <strong>Kyuyeon Kim</strong>, a <strong>Frontend Lead · FE PL with 4+ years of experience</strong> based in South Korea.',
   },
   {
     kr: '크리에이터 커머스(샵팬픽)로 시작해 B2B 자금관리(지에스아이코 · KFTC 오픈뱅킹)를 거쳐, 현재는 <strong>와이리즘에서 모두투어 차세대 웹 FE PL</strong>로서 B2C 및 약 300여 개 파트너사(ONBP)를 아우르는 <strong>Next.js 멀티테넌트 모노레포</strong>를 설계·리딩합니다.',

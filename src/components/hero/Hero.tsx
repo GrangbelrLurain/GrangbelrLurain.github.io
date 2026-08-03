@@ -20,7 +20,7 @@ export function Hero() {
         </div>
 
         <div className="hero-copy">
-          <p className="hero-kicker">Frontend Lead · Product Engineer</p>
+          <p className="hero-kicker">Frontend Lead · FE PL</p>
           <h1 className="hero-name">{t(profile.name)}</h1>
           <p className="hero-title">{t(profile.title)}</p>
           <p className="hero-tagline">{t(profile.tagline)}</p>

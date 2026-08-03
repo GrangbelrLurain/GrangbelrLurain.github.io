@@ -10,9 +10,8 @@ const badge = {
 }
 
 /**
- * Experience bullets — PlatformWeb / gsiko-kftc-app / shopfanpick-* team git volume 기준.
- * 수치·도메인 범위는 레포 전체 클러스터(팀 규모)를 반영하고,
- * 서술 주체는 FE PL / 담당 FE 역할·오너십으로 통일.
+ * Experience bullets — 규모는 테넌트·사이트·도메인·버전 등 방어 가능한 단위로.
+ * 서술 주체는 FE PL / 담당 FE 역할·오너십으로 통일. 팀 커밋 수치는 쓰지 않음.
  */
 export const companies: Company[] = [
   {
@@ -57,8 +56,8 @@ export const companies: Company[] = [
               en: 'Modetour Platform Reconstruction',
             },
             description: {
-              kr: 'B2C·B2B PC/MO 웹 서비스 전면 재구축을 FE PL로 리딩 (PlatformWeb 팀 레포 27,000+ 커밋 규모)',
-              en: 'Led B2C & B2B PC/MO platform rebuild as FE PL (PlatformWeb team repo at 27k+ commit scale)',
+              kr: 'B2C·B2B PC/MO 웹 서비스 전면 재구축을 FE PL로 리딩',
+              en: 'Led B2C & B2B PC/MO platform rebuild as FE PL',
             },
           },
           {
@@ -69,8 +68,8 @@ export const companies: Company[] = [
               en: 'Revenue-Critical Domain Migration',
             },
             description: {
-              kr: '호텔·검색·항공·예약·인증·프로모션·투어패스 플로우를 차세대 스택으로 이관·구조화 (팀 클러스터 기준 호텔 287 · 검색 212 · 프로모션 117 · 인증 105 커밋 규모)',
-              en: 'Migrated hotel, search, flight, booking, auth, promo, and tourpass flows into the next-gen stack (team-cluster scale: hotel 287 · search 212 · promo 117 · auth 105 commits)',
+              kr: '호텔·검색·항공·예약·인증·프로모션·투어패스 등 매출 직결 플로우를 차세대 스택으로 이관·구조화',
+              en: 'Migrated revenue-critical flows (hotel, search, flight, booking, auth, promo, tourpass) into the next-gen stack',
             },
           },
           {
@@ -81,8 +80,8 @@ export const companies: Company[] = [
               en: 'Legacy B2C PC/MO Parallel Ops',
             },
             description: {
-              kr: '차세대 전환 기간에도 라이브 서비스 안정 유지 — 빌드/파이프라인·장애 핫픽스·상품 리스트 캐싱 등 운영 이슈를 지속 처리 (팀 기준 운영·리팩토링 1,600+ 커밋 규모)',
-              en: 'Kept live services stable during migration — build/pipeline hotfixes, product-list caching, and day-to-day ops (team ops/refactor ~1,600+ commit scale)',
+              kr: '차세대 전환 기간에도 as-is / to-be 병행 운영 — 빌드/파이프라인·장애 핫픽스·상품 리스트 캐싱 등 라이브 안정 유지',
+              en: 'Ran as-is / to-be in parallel during migration — build/pipeline hotfixes, product-list caching, and live stability',
             },
           },
         ],
@@ -113,8 +112,8 @@ export const companies: Company[] = [
               en: 'ONBP Monorepo Migration',
             },
             description: {
-              kr: 'web-b2c / web-onbp / core 패키지 분리, 사이트별 빌드·배포 파이프라인, yarn → pnpm 마이그레이션으로 파트너 사이트 구축 속도를 높임 (팀 기준 73 커밋 규모)',
-              en: 'Split web-b2c / web-onbp / core, per-site build/deploy pipelines, and yarn→pnpm to speed partner site builds (team ~73 commit scale)',
+              kr: 'web-b2c / web-onbp / core 패키지 분리, 사이트별 빌드·배포 파이프라인, yarn → pnpm 마이그레이션으로 파트너 사이트 구축 속도를 높임',
+              en: 'Split web-b2c / web-onbp / core, per-site build/deploy pipelines, and yarn→pnpm to speed partner site builds',
             },
           },
           {
@@ -157,8 +156,8 @@ export const companies: Company[] = [
               en: 'FSD & Domain Layer Cleanup',
             },
             description: {
-              kr: 'Feature-Sliced Design 도입, 패키지 카드·공통 컴포넌트 구조 재편, 사이드이펙트·가독성 문제 해소 (팀 기준 33 커밋 규모)',
-              en: 'Adopted Feature-Sliced Design, restructured package cards/shared components, and reduced side effects (team ~33 commit scale)',
+              kr: 'Feature-Sliced Design 도입, 패키지 카드·공통 컴포넌트 구조 재편, 사이드이펙트·가독성 문제 해소',
+              en: 'Adopted Feature-Sliced Design, restructured package cards/shared components, and reduced side effects',
             },
           },
           {
@@ -213,8 +212,8 @@ export const companies: Company[] = [
               en: 'Modetour UI Library · Playground',
             },
             description: {
-              kr: 'antd 의존 축소, @repo/tokens·theme·playground(스캔 자동화·Monaco)로 컴포넌트 검증 환경을 구축 (팀 기준 101 커밋 규모)',
-              en: 'Reduced antd coupling and built component verification with @repo/tokens, theme, and playground (scan automation + Monaco; team ~101 commit scale)',
+              kr: 'antd 의존 축소, @repo/tokens·theme·playground(스캔 자동화·Monaco)로 컴포넌트 검증 환경을 구축',
+              en: 'Reduced antd coupling and built component verification with @repo/tokens, theme, and playground (scan automation + Monaco)',
             },
           },
           {
@@ -281,8 +280,8 @@ export const companies: Company[] = [
     badge: { kr: 'Frontend Developer', en: 'Frontend Developer' },
     date: '2024.01 – 2024.10',
     subtitle: {
-      kr: 'YesCMS (Cash Management System) B2B Admin Web & KFTC Open Banking',
-      en: 'YesCMS (Cash Management System) B2B Admin Web & KFTC Open Banking',
+      kr: 'YesCMS · B2B 자금관리·운영 웹 & KFTC 오픈뱅킹',
+      en: 'YesCMS · B2B ops web & KFTC Open Banking',
     },
     impacts: [
       {
@@ -290,8 +289,8 @@ export const companies: Company[] = [
         en: 'Fully re-architected a Windows C/S cash-management client into a React web admin',
       },
       {
-        kr: 'KFTC 오픈뱅킹 연동 — 출금·수납·원장 화면의 상태·검증·에러 플로우를 FE에서 담당 (팀 레포 1,700+ 커밋 규모)',
-        en: 'Owned FE state, validation, and error flows for KFTC-linked withdrawal, collection, and ledger screens (team repo 1.7k+ commit scale)',
+        kr: 'KFTC 오픈뱅킹 연동 — 출금·수납·원장 화면의 상태·검증·에러 플로우를 FE에서 담당',
+        en: 'Owned FE state, validation, and error flows for KFTC-linked withdrawal, collection, and ledger screens',
       },
       {
         kr: '회원·세금계산서(팝빌)·일괄수정 등 운영 핵심 워크플로우로 기업 고객 온보딩을 지원',
@@ -335,8 +334,8 @@ export const companies: Company[] = [
           en: 'Member Registration & Admin',
         },
         description: {
-          kr: '회원 등록/대기목록/정기출금일, 선택·일괄 수정, 증빙 파일, validation·이벤트 바인딩까지 회원 라이프사이클 UI 구축 (팀 기준 133 커밋 규모)',
-          en: 'Built member lifecycle UI: registration, waitlist, recurring debit dates, batch edit, evidence files, and validation/event binding (team ~133 commit scale)',
+          kr: '회원 등록/대기목록/정기출금일, 선택·일괄 수정, 증빙 파일, validation·이벤트 바인딩까지 회원 라이프사이클 UI 구축',
+          en: 'Built member lifecycle UI: registration, waitlist, recurring debit dates, batch edit, evidence files, and validation/event binding',
         },
       },
       {
@@ -359,8 +358,8 @@ export const companies: Company[] = [
           en: 'KFTC Integration — FE Scope',
         },
         description: {
-          kr: '출금·수납·원장·송수신 내역 화면에서 연동 상태 표시, 재처리·예외 UX, 운영자 확인 플로우를 구현 (팀 클러스터 기준 KFTC 관련 611 커밋 규모)',
-          en: 'Implemented integration status, retry/exception UX, and operator confirmation flows on withdrawal, collection, ledger, and tx-history screens (team KFTC cluster ~611 commit scale)',
+          kr: '출금·수납·원장·송수신 내역 화면에서 연동 상태 표시, 재처리·예외 UX, 운영자 확인 플로우를 구현',
+          en: 'Implemented integration status, retry/exception UX, and operator confirmation flows on withdrawal, collection, ledger, and tx-history screens',
         },
       },
       {
@@ -414,8 +413,8 @@ export const companies: Company[] = [
         en: 'Migrated main & admin from CRA to a Next.js monorepo and established SSR/SSG foundations',
       },
       {
-        kr: 'Next.js BFF + Prisma 타입 공유로 FE가 Feature를 완결 소유 — 프로덕트 엔지니어 역할로 확장',
-        en: 'Enabled end-to-end FE feature ownership via Next.js BFF + shared Prisma types — expanding into product engineering',
+        kr: 'Next.js BFF + Prisma 타입 공유로 FE가 Feature를 끝까지 소유하는 구조로 전환',
+        en: 'Enabled end-to-end FE feature ownership via Next.js BFF + shared Prisma types',
       },
       {
         kr: '메인 CMS 콘텐츠 타입 시스템과 상품·태그·파트너스 등 커머스 어드민을 구축·운영',
@@ -435,8 +434,8 @@ export const companies: Company[] = [
           en: 'CRA → Next.js Main/Admin Monorepo Migration',
         },
         description: {
-          kr: 'SSR 불가 CRA 한계를 판단해 shopfanpick-front·admin-next(Studio 포함)를 Next.js 모노레포로 전환 (어드민 팀 레포 ~980 커밋 규모)',
-          en: 'Migrated shopfanpick-front and admin-next (incl. Studio) from CRA to a Next.js monorepo (admin team repo ~980 commit scale)',
+          kr: 'SSR 불가 CRA 한계를 판단해 shopfanpick-front·admin-next(Studio 포함) 등 커머스·어드민·Studio를 Next.js 모노레포로 전환',
+          en: 'Migrated commerce, admin, and Studio (shopfanpick-front · admin-next) from CRA to a Next.js monorepo',
         },
       },
       {
@@ -447,8 +446,8 @@ export const companies: Company[] = [
           en: 'Next.js BFF & Prisma Type Sharing',
         },
         description: {
-          kr: 'API Routes BFF + Prisma 스키마/모델을 FE 전역에 공유해 BE 대기 없이 Feature를 완결 — FE에서 프로덕트 엔지니어 역할로 확장 (팀 기준 160+ 커밋 규모)',
-          en: 'Shared Prisma models via Next.js BFF so FE owned features end-to-end without waiting on BE — expanding into product engineering (team 160+ commit scale)',
+          kr: 'API Routes BFF + Prisma 스키마/모델을 FE 전역에 공유해 BE 대기 없이 Feature를 끝까지 소유',
+          en: 'Shared Prisma models via Next.js BFF so FE owned features end-to-end without waiting on BE',
         },
       },
       {
