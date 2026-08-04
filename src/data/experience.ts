@@ -25,20 +25,20 @@ export const companies: Company[] = [
     },
     impacts: [
       {
-        kr: 'B2C·BP·ONBP를 단일 Next.js 모노레포로 묶고, FE PL로 차세대 웹 개발·아키텍처를 리딩',
-        en: 'Unified B2C·BP·ONBP into one Next.js monorepo and led next-gen web development & architecture as FE PL',
+        kr: 'B2C 단일 구조를 core / web-b2c / web-onbp로 재편하고, yarn Berry → pnpm·Turborepo 모노레포로 다중 채널 확장을 리딩',
+        en: 'Restructured single-B2C into core / web-b2c / web-onbp and led yarn Berry → pnpm·Turborepo for multi-channel expansion',
       },
       {
-        kr: '호텔·검색·항공·예약·인증·프로모션 등 매출 직결 도메인의 차세대 개편을 우선순위·구조·리뷰 중심으로 리딩',
-        en: 'Led next-gen overhaul of revenue-critical domains (hotel, search, flight, booking, auth, promotions) via priority, structure, and review',
+        kr: 'Next.js 12→15 · React 19 · Ant Design v4→v5 마이그레이션을 주도하고 Less 빌드 체인을 제거',
+        en: 'Led Next.js 12→15, React 19, and Ant Design v4→v5 migrations, removing the Less build chain',
       },
       {
-        kr: 'pnpm·Turborepo·Docker 캐시와 React 19 공통 패키지 이관으로 빌드·플랫폼 마찰을 줄이는 기반을 정리',
-        en: 'Reduced build/platform friction by settling pnpm·Turborepo·Docker caches and React 19 shared-package migration',
+        kr: 'Hono BFF(@b2c/server·@onbp/server)와 Zod/스키마 파이프라인으로 FE–BE 경계를 타입 안전하게 정리',
+        en: 'Hardened FE–BE boundaries with Hono BFFs (@b2c/server · @onbp/server) and Zod/schema pipelines',
       },
       {
-        kr: '약 300개 파트너(ONBP) 사이트를 원소스 멀티테넌트로 운영하는 구조를 정착',
-        en: 'Established single-source multi-tenant operations for ~300 partner (ONBP) sites',
+        kr: 'proxy-tool로 Dev/Stage/Prod·항공·호텔·제휴 엔드포인트를 전환하는 로컬 DX를 구축 · ONBP ~300 사이트 원소스 운영',
+        en: 'Built proxy-tool DX for Dev/Stage/Prod and airline/hotel/partner endpoints · single-source ops for ~300 ONBP sites',
       },
     ],
     groups: [
@@ -136,8 +136,32 @@ export const companies: Company[] = [
               en: 'Next.js Major Upgrade & React 19',
             },
             description: {
-              kr: 'Next.js 12 계열 상향과 React 19 공통 패키지 마이그레이션(defaultProps 제거·타입 정리)을 점진 적용',
-              en: 'Progressively upgraded Next.js 12.x and migrated shared packages to React 19 (defaultProps removal, typing cleanup)',
+              kr: 'Next.js 12(Pages) → 15 · React 19 · TypeScript 5로 스택을 상향하고 공통 패키지 마이그레이션을 점진 적용',
+              en: 'Upgraded Next.js 12 (Pages) → 15, React 19, and TypeScript 5, migrating shared packages progressively',
+            },
+          },
+          {
+            category: 'ui',
+            badge: badge.ui,
+            title: {
+              kr: 'Ant Design v4 → v5 · Less 제거',
+              en: 'Ant Design v4 → v5 · Drop Less',
+            },
+            description: {
+              kr: 'antd v4 + next-plugin-antd-less 의존을 제거하고 v5 CSS-in-JS·Design Token 체계로 전환해 빌드 마찰을 줄임',
+              en: 'Removed antd v4 + next-plugin-antd-less and moved to v5 CSS-in-JS / Design Tokens to cut build friction',
+            },
+          },
+          {
+            category: 'arch',
+            badge: badge.arch,
+            title: {
+              kr: 'Hono BFF · API 스키마 파이프라인',
+              en: 'Hono BFF · API Schema Pipeline',
+            },
+            description: {
+              kr: '@b2c/server · @onbp/server(Hono) BFF와 Zod/TypeBox 기반 스키마 검증·타입 추출 파이프라인을 구축',
+              en: 'Built Hono BFFs (@b2c/server · @onbp/server) with Zod/TypeBox schema validation and type-generation pipelines',
             },
           },
         ],
@@ -217,6 +241,18 @@ export const companies: Company[] = [
             },
           },
           {
+            category: 'infra',
+            badge: badge.infra,
+            title: {
+              kr: 'proxy-tool · 환경 프로필 DX',
+              en: 'proxy-tool · Env Profile DX',
+            },
+            description: {
+              kr: 'Dev/Stage/Prod 및 항공·호텔·제휴 샌드박스 엔드포인트를 프로필로 전환하는 proxy-tool을 구축',
+              en: 'Built proxy-tool to switch Dev/Stage/Prod and airline/hotel/partner sandbox endpoints via profiles',
+            },
+          },
+          {
             category: 'ui',
             badge: badge.ui,
             title: {
@@ -236,8 +272,8 @@ export const companies: Company[] = [
               en: 'Azure DevOps · Docker · husky Pipelines',
             },
             description: {
-              kr: 'STG/PROD 환경변수, onbp/b2c deploy 연결, husky pre-commit/post-merge, 빌드 큐·캐시 운영',
-              en: 'Operated STG/PROD env, onbp/b2c deploy wiring, husky hooks, and build queue/cache hygiene',
+              kr: 'STG/PROD 환경변수, onbp/b2c deploy 연결, husky pre-commit/post-merge, 빌드 큐·캐시 운영 · Biome·Vitest 품질 기반 정리',
+              en: 'Operated STG/PROD env, onbp/b2c deploy, husky hooks, build cache · settled Biome and Vitest quality baselines',
             },
           },
           {
@@ -260,10 +296,15 @@ export const companies: Company[] = [
       'TypeScript',
       'Turborepo',
       'pnpm',
+      'Hono',
+      'Zod',
       'FSD',
       'TanStack Query',
       'Zustand',
       'React 19',
+      'Ant Design',
+      'Biome',
+      'Vitest',
       'Azure DevOps',
       'Git',
     ],

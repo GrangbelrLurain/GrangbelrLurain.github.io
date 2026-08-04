@@ -529,21 +529,19 @@
         <p class="job-meta">모두투어 차세대 웹 파견 · B2C / Best Partner / Online Best Partner</p>
         <ul class="bullets">
           <li>
-            브랜드가 다른 B2C·파트너 서비스를 단일 모노레포로 통합 설계 —
-            <code>web-b2c</code> / <code>web-onbp</code> / <code>core</code>
-            테넌트별 화면 분기와 공통 코드 공유를 동시에 해결
+            B2C 단일 구조를 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code>로 재편 —
+            yarn → pnpm·Turborepo 모노레포로 다중 채널 확장을 리딩
           </li>
           <li>
-            결제 UI를 embed로 외부 서비스에 제공 —
-            결제 모듈을 독립 배포 단위로 분리해 여러 테넌트에서 재사용 가능한 구조로 설계
+            Next.js <strong>v12 <span class="arr">→</span> v15</strong> · React 19 ·
+            Ant Design v4→v5(Less 제거) 마이그레이션 주도
           </li>
           <li>
-            레거시 리스크를 판단해 Next.js
-            <strong>v12 <span class="arr">→</span> v15</strong> 직접 상향 주도
+            Hono BFF·스키마 검증과 proxy-tool로 FE–BE 경계·로컬 DX 정리
           </li>
           <li>
-            FE 컨벤션·코드 리뷰 문화 수립, 팀이 반복하는 판단 기준을
-            가이드라인으로 문서화해 온보딩 비용 절감
+            공통 레이어·런타임 테넌트 UI로 브랜드별 화면 제공 ·
+            ONBP ~300 사이트 원소스 운영
           </li>
         </ul>
       </div>
