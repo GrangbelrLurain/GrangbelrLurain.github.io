@@ -8,6 +8,13 @@ import {
   type ReactNode,
 } from 'react'
 import type { Lang, LocaleText, TaskCategory } from '../data/types'
+import { applyDocumentMeta } from '../lib/documentMeta'
+import {
+  langFromPathname,
+  localePath,
+  readBrowserLanguages,
+  resolveLang,
+} from '../lib/locale'
 
 type Theme = 'dark' | 'light'
 type FilterId = 'all' | TaskCategory
@@ -24,30 +31,52 @@ type UiPrefsContextValue = {
 
 const UiPrefsContext = createContext<UiPrefsContextValue | null>(null)
 
-function readStored<T extends string>(key: string, fallback: T): T {
+function readStored(key: string): string | null {
   try {
-    const v = localStorage.getItem(key)
-    return (v as T) || fallback
+    return localStorage.getItem(key)
   } catch {
-    return fallback
+    return null
   }
 }
 
+function readInitialLang(): Lang {
+  if (typeof window === 'undefined') return 'en'
+  return resolveLang({
+    pathname: window.location.pathname,
+    queryLang: new URLSearchParams(window.location.search).get('lang'),
+    storedLang: readStored('lang'),
+    languages: readBrowserLanguages(),
+  })
+}
+
 export function UiPrefsProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => readStored('lang', 'kr'))
-  const [theme, setTheme] = useState<Theme>(() => readStored('theme', 'light'))
+  const [lang, setLangState] = useState<Lang>(readInitialLang)
+  const [theme, setTheme] = useState<Theme>(() => (readStored('theme') === 'dark' ? 'dark' : 'light'))
   const [filter, setFilter] = useState<FilterId>('all')
 
   useEffect(() => {
     const root = document.documentElement
     root.classList.remove('dark', 'light')
     root.classList.add(theme)
-    root.lang = lang === 'kr' ? 'ko' : 'en'
+    applyDocumentMeta(lang)
+    try {
+      localStorage.setItem('lang', lang)
+    } catch {
+      /* private mode */
+    }
   }, [theme, lang])
 
   const setLang = useCallback((next: Lang) => {
-    setLangState(next)
-    localStorage.setItem('lang', next)
+    try {
+      localStorage.setItem('lang', next)
+    } catch {
+      /* private mode */
+    }
+    if (langFromPathname(window.location.pathname) === next) {
+      setLangState(next)
+      return
+    }
+    window.location.assign(localePath(next, window.location.hash, window.location.search))
   }, [])
 
   const toggleTheme = useCallback(() => {

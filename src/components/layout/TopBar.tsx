@@ -51,20 +51,32 @@ export function TopBar() {
             PDF
           </button>
           <span className="topbar-lang" role="group" aria-label="Language">
-            <button
-              type="button"
+            <a
+              href="/ko/"
+              hrefLang="ko"
               className={`text-btn${lang === 'kr' ? ' active' : ''}`}
-              onClick={() => setLang('kr')}
+              aria-current={lang === 'kr' ? 'true' : undefined}
+              onClick={(e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                e.preventDefault()
+                setLang('kr')
+              }}
             >
               KR
-            </button>
-            <button
-              type="button"
+            </a>
+            <a
+              href="/en/"
+              hrefLang="en"
               className={`text-btn${lang === 'en' ? ' active' : ''}`}
-              onClick={() => setLang('en')}
+              aria-current={lang === 'en' ? 'true' : undefined}
+              onClick={(e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+                e.preventDefault()
+                setLang('en')
+              }}
             >
               EN
-            </button>
+            </a>
           </span>
         </div>
       </div>
