@@ -157,6 +157,7 @@ a:hover {
   text-transform: uppercase;
   cursor: pointer;
   padding: 0.15rem 0.3rem;
+  text-decoration: none;
 }
 .text-btn:hover,
 .text-btn.active {
