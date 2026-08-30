@@ -162,6 +162,7 @@ a:hover {
 .text-btn:hover,
 .text-btn.active {
   color: var(--ink);
+  text-decoration: none;
 }
 
 /* ── Page column ── */
