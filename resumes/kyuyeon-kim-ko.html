@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>김규연 — 이력서</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    /* ── 인쇄 설정: 브라우저 여백 0, 페이지 크기 A4 ── */
+    @page { size: A4; margin: 0; }
+
+    /* ── 토큰 ── */
+    :root {
+      --navy:       #0d1b2a;
+      --navy-mid:   #1b2f45;
+      --ink:        #111827;
+      --body:       #374151;
+      --muted:      #6b7280;
+      --accent:     #1d4ed8;
+      --accent-l:   #3b82f6;
+      --accent-dim: #93c5fd;
+      --line:       #d1d5db;
+      --tag-bg:     #eff6ff;
+      --tag-bd:     #bfdbfe;
+      --tag-tx:     #1e40af;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+      font-size: 13px;
+      color: var(--body);
+      background: #dde3ea;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ══════════════════════════════════════════
+       페이지 래퍼 — 각 div.page가 A4 한 장
+    ══════════════════════════════════════════ */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.10), 0 12px 40px rgba(0,0,0,.12);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* 인쇄 시 */
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+    }
+
+    /* ══════════════════════════════════════════
+       P1 헤더 — 다크 네이비
+    ══════════════════════════════════════════ */
+    .main-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 28px 18mm 24px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .main-header::before {
+      content: "";
+      position: absolute;
+      right: -50px; top: -50px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(59,130,246,.08);
+      pointer-events: none;
+    }
+    .main-header::after {
+      content: "";
+      position: absolute;
+      right: 80px; bottom: -70px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(59,130,246,.05);
+      pointer-events: none;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      gap: 16px 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .name {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.04em;
+      line-height: 1;
+    }
+    .role-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .role {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-dim);
+    }
+    .career-years {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,.72);
+      border-left: 1px solid rgba(255,255,255,.25);
+      padding-left: 10px;
+    }
+    /* 연락처 */
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,.88);
+      padding-top: 2px;
+      flex-shrink: 0;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .contact-item a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ══════════════════════════════════════════
+       P2 미니 헤더바
+    ══════════════════════════════════════════ */
+    .mini-header {
+      padding: 10px 18mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      border-bottom: 1px solid #c8cdd6;
+    }
+    .mini-name {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #b0b7c3;
+      letter-spacing: -.01em;
+    }
+    .mini-page {
+      font-size: 0.72rem;
+      color: #c5cad4;
+    }
+
+    /* ══════════════════════════════════════════
+       바디 영역
+    ══════════════════════════════════════════ */
+    .body {
+      padding: 18px 18mm 18mm;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── 섹션 제목 ── */
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 18px 0 11px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    h2::after {
+      content: "";
+      flex: 1;
+      border-top: 1px solid var(--line);
+    }
+    .body section:first-of-type h2 { margin-top: 0; }
+
+    /* ── 소개 ── */
+    .summary {
+      font-size: 0.86rem;
+      line-height: 1.8;
+      color: var(--body);
+      word-break: keep-all;
+      border-left: 2.5px solid var(--accent-l);
+      padding-left: 12px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── 기술 스택 ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 6px 10px;
+      align-items: baseline;
+    }
+    .skill-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding-top: 1px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-bd);
+      color: var(--tag-tx);
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── 경력 카드 ── */
+    .job {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .job:last-child { border-bottom: none; padding-bottom: 0; }
+    .job:first-child { padding-top: 0; }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 2px 12px;
+      margin-bottom: 3px;
+    }
+    .job-left { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; }
+    .job-company {
+      font-size: 1rem;
+      font-weight: 750;
+      color: var(--ink);
+      letter-spacing: -.02em;
+    }
+    .job-badge {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-bd);
+      padding: 1px 7px;
+      border-radius: 20px;
+      white-space: nowrap;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .job-dates {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .job-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 7px;
+    }
+
+    /* 불릿 */
+    .bullets { list-style: none; }
+    .bullets li {
+      position: relative;
+      padding-left: 13px;
+      margin-bottom: 5px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+    .bullets li:last-child { margin-bottom: 0; }
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 1px; top: 7px;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent-l);
+    }
+    .bullets li strong { color: var(--ink); font-weight: 700; }
+    .bullets li code {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.82em;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 0 4px;
+      border-radius: 3px;
+      color: #374151;
+    }
+    .arr { color: var(--accent); font-weight: 700; }
+
+    /* ── 프로젝트 ── */
+    .proj {
+      margin-bottom: 14px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .proj:last-child { margin-bottom: 0; }
+    .proj-head { display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px; }
+    .proj-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .proj-name {
+      font-size: 0.95rem;
+      font-weight: 750;
+      color: var(--ink);
+    }
+    .proj-tech {
+      font-size: 0.74rem;
+      color: var(--muted);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+    .proj-links { display: flex; gap: 6px; flex-shrink: 0; }
+    .proj-links a {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--tag-bd);
+      background: var(--tag-bg);
+      padding: 1px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .proj-url-footer {
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-top: 4px;
+      padding-left: 13px;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .proj-url-footer .url-icon {
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .proj-url-footer .url-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 8px;
+      align-items: center;
+    }
+    .proj-url-footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+    .proj-url-footer .sep {
+      color: #9ca3af;
+      user-select: none;
+    }
+
+    /* ── 학력 ── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .edu-name { font-weight: 700; color: var(--ink); font-size: 0.9rem; }
+    .edu-detail { font-size: 0.8rem; color: var(--muted); }
+
+    /* ── 인쇄 공통: 링크 보존 및 가시성 설정 ── */
+    @media print {
+      .page {
+        overflow: visible !important;
+      }
+      a {
+        color: #1d4ed8 !important;
+        text-decoration: underline !important;
+        -webkit-print-color-adjust: economy !important;
+        print-color-adjust: economy !important;
+      }
+      .contact-item a {
+        color: #ffffff !important;
+        text-decoration: underline !important;
+      }
+      .proj-links a {
+        color: #1d4ed8 !important;
+        background-color: #eff6ff !important;
+        border: 1px solid #bfdbfe !important;
+        text-decoration: underline !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      a[href]::after { content: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     PAGE 1
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- 다크 헤더 -->
+  <header class="main-header">
+    <div class="header-inner">
+      <div>
+        <div class="name">김규연</div>
+        <div class="role-line">
+          <span class="role">프론트엔드 엔지니어 · FE PL</span>
+          <span class="career-years">총 경력 4년 5개월 (2022.04 ~)</span>
+        </div>
+      </div>
+      <div class="contact">
+        <span class="contact-item">📱 010-2300-6059</span>
+        <span class="contact-item">📧 <a href="mailto:lurain003@gmail.com">lurain003@gmail.com</a></span>
+        <span class="contact-item">🔗 <a href="https://github.com/GrangbelrLurain" target="_blank">github.com/GrangbelrLurain</a></span>
+        <span class="contact-item">🌐 <a href="https://delete-horizon.com" target="_blank">delete-horizon.com</a></span>
+        <span class="contact-item">📍 수원 / 서울</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- 소개 -->
+    <section>
+      <h2>소개</h2>
+      <p class="summary">
+        커머스 FE로 시작해 운영 웹 전환을 거쳐, 지금은 모두투어 차세대 웹에서
+        B2C·파트너를 한 Next.js 모노레포로 확장하는 FE PL.<br>
+        도메인이 복잡할수록 구조 설계에 먼저 개입하고,
+        팀이 반복하는 문제를 인프라 레벨에서 제거하는 방식으로 일한다.<br>
+        사이드에서는 로컬 DX 도구인 horizon-gateway와 독립 배포 메쉬인 horizon-mesh를 직접 설계·운영 중이다.
+      </p>
+    </section>
+
+    <!-- 기술 스택 -->
+    <section>
+      <h2>기술 스택</h2>
+      <div class="skills-grid">
+        <span class="skill-label">Languages</span>
+        <div class="skill-tags">
+          <span class="tag">TypeScript</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Rust</span>
+        </div>
+        <span class="skill-label">Frontend</span>
+        <div class="skill-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">React</span>
+          <span class="tag">TanStack Query</span>
+          <span class="tag">Zustand</span>
+          <span class="tag">Redux</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">PWA</span>
+          <span class="tag">Vitest</span>
+        </div>
+        <span class="skill-label">Arch</span>
+        <div class="skill-tags">
+          <span class="tag">Turborepo</span>
+          <span class="tag">pnpm workspaces</span>
+          <span class="tag">Multi-tenant Monorepo</span>
+          <span class="tag">Micro-Frontend Mesh</span>
+        </div>
+        <span class="skill-label">Systems</span>
+        <div class="skill-tags">
+          <span class="tag">Tauri 2</span>
+          <span class="tag">MITM Proxy</span>
+          <span class="tag">API Mocking</span>
+          <span class="tag">Prisma</span>
+          <span class="tag">Azure DevOps</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 경력 -->
+    <section>
+      <h2>경력</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">주식회사 와이리즘</span>
+            <span class="job-badge">Frontend PL · 팀원 3~5명</span>
+          </div>
+          <span class="job-dates">2024.11 – 현재 (재직중)</span>
+        </div>
+        <p class="job-meta">모두투어 차세대 웹 파견 · B2C / Best Partner / Online Best Partner</p>
+        <ul class="bullets">
+          <li>
+            B2C 단일 구조를 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code>로 재편 —
+            yarn → pnpm·Turborepo 모노레포로 다중 채널 확장을 리딩
+          </li>
+          <li>
+            Next.js <strong>v12 <span class="arr">→</span> v15</strong> · React 19 ·
+            Ant Design v4→v5(Less 제거) 마이그레이션 주도
+          </li>
+          <li>
+            Hono BFF·스키마 검증과 proxy-tool로 FE–BE 경계·로컬 DX 정리
+          </li>
+          <li>
+            공통 레이어·런타임 테넌트 UI로 브랜드별 화면 제공 ·
+            ONBP ~300 사이트 원소스 운영
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">주식회사 지에스아이코</span>
+            <span class="job-badge">Frontend Developer</span>
+          </div>
+          <span class="job-dates">2024.01 – 2024.10 (10개월)</span>
+        </div>
+        <p class="job-meta">YesCMS · B2B 자금관리·운영 웹</p>
+        <ul class="bullets">
+          <li>
+            수년간 쌓인 C/S 설치형 클라이언트를 React 웹으로 재설계 —
+            대형 어드민 화면 아키텍처를 신규 수립해 마이그레이션 주도
+          </li>
+          <li>
+            운영진의 반복 업무 패턴을 분석해 어드민 UI/UX 재구성,
+            실사용자 피드백 기반으로 워크플로우 단순화
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">주식회사 샵팬픽</span>
+            <span class="job-badge">Frontend Developer</span>
+          </div>
+          <span class="job-dates">2022.04 – 2023.12 (1년 9개월)</span>
+        </div>
+        <p class="job-meta">크리에이터 커머스 플랫폼</p>
+        <ul class="bullets">
+          <li>
+            SSR이 불가한 CRA 구조의 한계를 판단,
+            커머스·어드민·Studio 3개 서비스를 Next.js로 전환
+          </li>
+          <li>
+            전환 후 SSR/SSG 도입으로 SEO 가시성 확보,
+            라우터 구조 개선으로 초기 로딩 성능 개선
+          </li>
+          <li>
+            Next.js를 BFF로 도입해 Prisma 타입을 모노레포 전반에 공유 —
+            FE가 BE 의존 없이 Feature를 끝까지 소유하는 구조로 전환
+          </li>
+        </ul>
+      </div>
+
+    </section>
+  </div><!-- /body -->
+</div><!-- /page 1 -->
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 2
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- 미니 헤더바 -->
+  <div class="mini-header">
+    <span class="mini-name">김규연 — 이력서</span>
+    <span class="mini-page">2 / 2</span>
+  </div>
+
+  <div class="body">
+
+    <!-- 프로젝트 -->
+    <section>
+      <h2>개인 프로젝트 (delete-horizon)</h2>
+
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-title-row">
+            <span class="proj-name">horizon-gateway</span>
+            <div class="proj-links">
+              <a href="https://gateway.delete-horizon.com" target="_blank">Live ↗</a>
+              <a href="https://github.com/GrangbelrLurain/horizon-gateway" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+          <span class="proj-tech">Rust · Tauri 2 · React · TypeScript</span>
+        </div>
+        <ul class="bullets">
+          <li>
+            로컬에서 프로덕션에 가까운 환경을 재현하는 DX 데스크톱 앱 —
+            HTTPS MITM 프록시·API 모킹·도메인 헬스체크·모바일 터널링 내장
+          </li>
+          <li>
+            Cursor·Claude·Gemini 등 AI 에이전트가 로컬 인프라 상태를
+            직접 인식·오케스트레이션할 수 있는 CLI 및 Agent Skill 구축
+          </li>
+        </ul>
+        <div class="proj-url-footer">
+          <span class="url-icon">🔗</span>
+          <div class="url-list">
+            <a href="https://gateway.delete-horizon.com" target="_blank">https://gateway.delete-horizon.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-title-row">
+            <span class="proj-name">horizon-mesh</span>
+            <div class="proj-links">
+              <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">Travel ↗</a>
+              <a href="https://hotel.delete-horizon.com/" target="_blank">Hotel ↗</a>
+              <a href="https://auth.delete-horizon.com/" target="_blank">Auth ↗</a>
+            </div>
+          </div>
+          <span class="proj-tech">Turborepo · React · TypeScript · PWA · Cloudflare Pages</span>
+        </div>
+        <ul class="bullets">
+          <li>
+            서로 다른 도메인에 독립 배포된 PWA를 공통 embed protocol로 연결 —
+            서버 없이 정적 배포로 Multi-Frontend App 메쉬 구현
+          </li>
+          <li>
+            travel·hotel·auth 모듈화,
+            IndexedDB 기반 Local-First 구조로 오프라인 동작 지원
+          </li>
+        </ul>
+        <div class="proj-url-footer">
+          <span class="url-icon">🔗</span>
+          <div class="url-list">
+            <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">https://travel.delete-horizon.com</a>
+            <span class="sep">·</span>
+            <a href="https://hotel.delete-horizon.com/" target="_blank">https://hotel.delete-horizon.com</a>
+            <span class="sep">·</span>
+            <a href="https://auth.delete-horizon.com/" target="_blank">https://auth.delete-horizon.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 학력 -->
+    <section>
+      <h2>학력</h2>
+      <div class="edu-row">
+        <span class="edu-name">인제고등학교</span>
+        <span class="edu-detail">이과 졸업 · 2013.02</span>
+      </div>
+    </section>
+
+  </div><!-- /body -->
+</div><!-- /page 2 -->
+
+</body>
+</html>

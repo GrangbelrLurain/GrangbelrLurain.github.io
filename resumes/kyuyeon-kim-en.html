@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyuyeon Kim — Resume</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    @page { size: A4; margin: 0; }
+
+    :root {
+      --navy:     #0d1b2a;
+      --navy-mid: #1b2f45;
+      --ink:      #111827;
+      --body:     #374151;
+      --muted:    #6b7280;
+      --accent:   #1d4ed8;
+      --accent-l: #3b82f6;
+      --accent-d: #93c5fd;
+      --line:     #d1d5db;
+      --tag-bg:   #eff6ff;
+      --tag-bd:   #bfdbfe;
+      --tag-tx:   #1e40af;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 11.5px;
+      color: var(--body);
+      background: #dde3ea;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page ── */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 24px auto;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,.10), 0 12px 40px rgba(0,0,0,.12);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; border-radius: 0; box-shadow: none; }
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 20px 17mm 18px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .header::before {
+      content: ""; position: absolute;
+      right: -40px; top: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(59,130,246,.07);
+      pointer-events: none;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      gap: 12px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Left */
+    .name {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+    .role-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .role {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-d);
+    }
+    .avail {
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.6);
+      border-left: 1px solid rgba(255,255,255,.22);
+      padding-left: 9px;
+    }
+
+    /* Right: contact */
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      font-size: 0.77rem;
+      color: rgba(255,255,255,.85);
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+    .contact-item { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+    .contact-item a { color: #fff; text-decoration: none; font-weight: 600; }
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── Page 2 mini-header ── */
+    .mini-header {
+      padding: 9px 17mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+      border-bottom: 1px solid #c8cdd6;
+    }
+    .mini-name {
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: #b0b7c3;
+      letter-spacing: -.01em;
+    }
+    .mini-page { font-size: 0.7rem; color: #c5cad4; }
+
+    /* ── Body ── */
+    .body {
+      padding: 13px 17mm 10mm;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Section heading ── */
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 12px 0 7px;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    h2::after {
+      content: "";
+      flex: 1;
+      border-top: 1px solid var(--line);
+    }
+    .body section:first-of-type h2 { margin-top: 0; }
+
+    /* ── Summary ── */
+    .summary {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: var(--body);
+      border-left: 2.5px solid var(--accent-l);
+      padding-left: 11px;
+      word-break: normal;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 5px 10px;
+      align-items: baseline;
+    }
+    .skill-label {
+      font-size: 0.69rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-bd);
+      color: var(--tag-tx);
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Projects (featured, comes first) ── */
+    .proj {
+      margin-bottom: 9px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .proj:last-child { margin-bottom: 0; }
+    .proj-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 5px; }
+    .proj-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .proj-name { font-size: 0.92rem; font-weight: 750; color: var(--ink); }
+    .proj-tech {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+    .proj-links { display: flex; gap: 5px; flex-shrink: 0; }
+    .proj-links a {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--tag-bd);
+      background: var(--tag-bg);
+      padding: 1px 6px;
+      border-radius: 3px;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .proj-url-footer {
+      font-size: 0.71rem;
+      color: var(--muted);
+      margin-top: 3px;
+      padding-left: 12px;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+    .proj-url-footer .url-icon {
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .proj-url-footer .url-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px 8px;
+      align-items: center;
+    }
+    .proj-url-footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+    .proj-url-footer .sep {
+      color: #9ca3af;
+      user-select: none;
+    }
+
+    /* ── Experience ── */
+    .job {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .job:last-child { border-bottom: none; padding-bottom: 0; }
+    .job:first-child { padding-top: 0; }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 1px 10px;
+      margin-bottom: 2px;
+    }
+    .job-left { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px; }
+    .job-company { font-size: 0.95rem; font-weight: 750; color: var(--ink); letter-spacing: -.01em; }
+    .job-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-bd);
+      padding: 1px 6px;
+      border-radius: 20px;
+      white-space: nowrap;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .job-dates { font-size: 0.74rem; color: var(--muted); font-weight: 500; white-space: nowrap; }
+    .job-meta { font-size: 0.74rem; color: var(--muted); margin-bottom: 6px; }
+
+    /* Bullets */
+    .bullets { list-style: none; }
+    .bullets li {
+      position: relative;
+      padding-left: 12px;
+      margin-bottom: 3px;
+      font-size: 0.81rem;
+      line-height: 1.52;
+    }
+    .bullets li:last-child { margin-bottom: 0; }
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 1px; top: 6.5px;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent-l);
+    }
+    .bullets li strong { color: var(--ink); font-weight: 700; }
+    .bullets li code {
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.82em;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+    .arr { color: var(--accent); font-weight: 700; }
+
+    /* ── Education ── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .edu-name { font-weight: 700; color: var(--ink); font-size: 0.86rem; }
+    .edu-detail { font-size: 0.76rem; color: var(--muted); }
+
+    @media print {
+      .page {
+        overflow: visible !important;
+      }
+      a {
+        color: #1d4ed8 !important;
+        text-decoration: underline !important;
+      }
+      .contact-item a {
+        color: #ffffff !important;
+        text-decoration: underline !important;
+      }
+      .proj-links a {
+        color: #1d4ed8 !important;
+        background-color: #eff6ff !important;
+        border: 1px solid #bfdbfe !important;
+        text-decoration: underline !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      a[href]::after { content: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div>
+        <div class="name">Kyuyeon Kim</div>
+        <div class="role-line">
+          <span class="role">Frontend Engineer · FE Lead</span>
+          <span class="avail">Open to Part-time &amp; Contract Remote</span>
+        </div>
+      </div>
+      <div class="contact">
+        <span class="contact-item">📱 +82 10-2300-6059</span>
+        <span class="contact-item">📧 <a href="mailto:lurain003@gmail.com">lurain003@gmail.com</a></span>
+        <span class="contact-item">🔗 <a href="https://github.com/GrangbelrLurain" target="_blank">github.com/GrangbelrLurain</a></span>
+        <span class="contact-item">🌐 <a href="https://delete-horizon.com" target="_blank">delete-horizon.com</a></span>
+        <span class="contact-item">📍 Suwon / Seoul, South Korea</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- Summary -->
+    <section>
+      <h2>About</h2>
+      <p class="summary">
+        Frontend engineer with 4+ years building TypeScript monorepos, multi-tenant Next.js platforms,
+        and Rust-based developer tooling. Currently leading FE on a large-scale travel e-commerce platform
+        (B2C + partner, 3 tenants). On the side, independently built and currently running
+        <strong>horizon-gateway</strong> (local DX desktop app) and <strong>horizon-mesh</strong>
+        (independently hosted front-end mesh). Available for part-time or contract remote — can own features end-to-end
+        without hand-holding.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-label">Core</span>
+        <div class="skill-tags">
+          <span class="tag">TypeScript</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Rust</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+        <span class="skill-label">Frontend</span>
+        <div class="skill-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">React</span>
+          <span class="tag">TanStack Query</span>
+          <span class="tag">Zustand</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">PWA</span>
+          <span class="tag">Vitest</span>
+        </div>
+        <span class="skill-label">Arch</span>
+        <div class="skill-tags">
+          <span class="tag">Turborepo</span>
+          <span class="tag">pnpm workspaces</span>
+          <span class="tag">Multi-tenant Monorepo</span>
+          <span class="tag">Micro-Frontend Mesh</span>
+          <span class="tag">BFF (Next.js)</span>
+          <span class="tag">Prisma</span>
+        </div>
+        <span class="skill-label">Systems</span>
+        <div class="skill-tags">
+          <span class="tag">Tauri 2</span>
+          <span class="tag">MITM Proxy</span>
+          <span class="tag">API Mocking</span>
+          <span class="tag">Git</span>
+          <span class="tag">Azure DevOps</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects (featured above experience for freelance positioning) -->
+    <section>
+      <h2>Independent Projects</h2>
+
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-title-row">
+            <span class="proj-name">horizon-gateway</span>
+            <div class="proj-links">
+              <a href="https://gateway.delete-horizon.com" target="_blank">Live ↗</a>
+              <a href="https://github.com/GrangbelrLurain/horizon-gateway" target="_blank">GitHub ↗</a>
+            </div>
+          </div>
+          <span class="proj-tech">Rust · Tauri 2 · React · TypeScript</span>
+        </div>
+        <ul class="bullets">
+          <li>Local DX desktop app — HTTPS MITM proxy, API mocking, domain health checks, and mobile tunneling in a single binary</li>
+          <li>CLI + Agent Skill layer letting AI coding agents (Cursor, Claude, Gemini) directly observe and orchestrate local infra state</li>
+        </ul>
+        <div class="proj-url-footer">
+          <span class="url-icon">🔗</span>
+          <div class="url-list">
+            <a href="https://gateway.delete-horizon.com" target="_blank">https://gateway.delete-horizon.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-title-row">
+            <span class="proj-name">horizon-mesh</span>
+            <div class="proj-links">
+              <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">Travel ↗</a>
+              <a href="https://hotel.delete-horizon.com/" target="_blank">Hotel ↗</a>
+              <a href="https://auth.delete-horizon.com/" target="_blank">Auth ↗</a>
+            </div>
+          </div>
+          <span class="proj-tech">Turborepo · React · TypeScript · PWA · Cloudflare Pages</span>
+        </div>
+        <ul class="bullets">
+          <li>Serverless Multi-Frontend App mesh — independently-deployed PWAs across separate domains connected via a shared embed protocol; zero server, pure static</li>
+          <li>Modularized as travel · hotel · auth; IndexedDB-based Local-First architecture for offline support</li>
+        </ul>
+        <div class="proj-url-footer">
+          <span class="url-icon">🔗</span>
+          <div class="url-list">
+            <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">https://travel.delete-horizon.com</a>
+            <span class="sep">·</span>
+            <a href="https://hotel.delete-horizon.com/" target="_blank">https://hotel.delete-horizon.com</a>
+            <span class="sep">·</span>
+            <a href="https://auth.delete-horizon.com/" target="_blank">https://auth.delete-horizon.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <h2>Experience</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">YRISM (dispatched to Modetour)</span>
+            <span class="job-badge">Frontend Lead · 3–5 engineers</span>
+          </div>
+          <span class="job-dates">Nov 2024 – Present</span>
+        </div>
+        <p class="job-meta">Next-gen travel e-commerce platform · B2C / Best Partner / Online Best Partner</p>
+        <ul class="bullets">
+          <li>Restructured single-B2C into <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> — led yarn → pnpm·Turborepo for multi-channel expansion</li>
+          <li>Led Next.js <strong>v12 <span class="arr">→</span> v15</strong>, React 19, and Ant Design v4→v5 (dropped Less) migrations</li>
+          <li>Hardened FE–BE boundaries with Hono BFF + schema validation, and local DX via proxy-tool</li>
+          <li>Runtime tenant UI for brand surfaces · single-source ops for ~300 ONBP sites</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">GSIKO</span>
+            <span class="job-badge">Frontend Developer</span>
+          </div>
+          <span class="job-dates">Jan 2024 – Oct 2024</span>
+        </div>
+        <p class="job-meta">YesCMS · B2B ops web</p>
+        <ul class="bullets">
+          <li>Re-architected a legacy desktop client as a React web app — established architecture for a large admin surface and led the migration</li>
+          <li>Rebuilt admin UX based on operator workflow analysis and iterative user feedback</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div><!-- /body p1 -->
+</div><!-- /page 1 -->
+
+
+<!-- ══════════════════════════════
+     PAGE 2
+══════════════════════════════ -->
+<div class="page">
+
+  <!-- Subtle mini-header -->
+  <div class="mini-header">
+    <span class="mini-name">Kyuyeon Kim — Resume</span>
+    <span class="mini-page">2 / 2</span>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <h2>Experience (cont.)</h2>
+
+      <div class="job" style="border-top: none;">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">ShopFanPick</span>
+            <span class="job-badge">Frontend Developer</span>
+          </div>
+          <span class="job-dates">Apr 2022 – Dec 2023</span>
+        </div>
+        <p class="job-meta">Creator commerce platform</p>
+        <ul class="bullets">
+          <li>Identified CRA's SSR limitations; migrated commerce, admin, and Studio (3 services) to Next.js — improved SEO visibility and initial load performance</li>
+          <li>Introduced Next.js as BFF, sharing Prisma types across a TypeScript monorepo — FE can own and ship full features independently of BE</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2>Education</h2>
+      <div class="edu-row">
+        <span class="edu-name">Inje High School</span>
+        <span class="edu-detail">Science track · Graduated Feb 2013</span>
+      </div>
+    </section>
+
+  </div><!-- /body p2 -->
+</div><!-- /page 2 -->
+</body>
+</html>
