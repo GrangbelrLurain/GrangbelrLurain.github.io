@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>김규연 — 이력서</title>
+  <title>김규연 - Agentic DX Engineer 이력서</title>
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
@@ -241,7 +241,7 @@
     /* ── 기술 스택 ── */
     .skills-grid {
       display: grid;
-      grid-template-columns: 76px 1fr;
+      grid-template-columns: 88px 1fr;
       gap: 6px 10px;
       align-items: baseline;
     }
@@ -460,18 +460,15 @@
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     PAGE 1
-══════════════════════════════════════════ -->
+<!-- PAGE 1 -->
 <div class="page">
 
-  <!-- 다크 헤더 -->
   <header class="main-header">
     <div class="header-inner">
       <div>
         <div class="name">김규연</div>
         <div class="role-line">
-          <span class="role">프론트엔드 엔지니어 · FE PL</span>
+          <span class="role">Agentic DX Engineer</span>
           <span class="career-years">총 경력 4년 5개월 (2022.04 ~)</span>
         </div>
       </div>
@@ -487,22 +484,29 @@
 
   <div class="body">
 
-    <!-- 소개 -->
     <section>
       <h2>소개</h2>
       <p class="summary">
-        커머스 FE로 시작해 운영 웹 전환을 거쳐, 지금은 모두투어 차세대 웹에서
-        B2C·파트너를 한 Next.js 모노레포로 확장하는 FE PL.<br>
-        도메인이 복잡할수록 구조 설계에 먼저 개입하고,
-        팀이 반복하는 문제를 인프라 레벨에서 제거하는 방식으로 일한다.<br>
-        사이드에서는 로컬 DX 도구인 horizon-gateway와 독립 배포 메쉬인 horizon-mesh를 직접 설계·운영 중이다.
+        모두투어 차세대 웹 FE PL로 B2C·파트너 약 300개 사이트를 Next.js 모노레포로 운영하면서,
+        로컬 재현(proxy-tool)과 Cursor/Claude 가이드로 팀 온보딩·리뷰 기준을 맞춘다.<br>
+        사이드로 horizon-gateway에 에이전트용 CLI·Agent Skill을 만들어,
+        로컬 인프라 상태를 에이전트가 읽고 다루게 한다.<br>
+        FE로 제품을 만들되, 팀이 반복하는 판단은 도구와 컨벤션으로 먼저 줄이는 쪽으로 일한다.
       </p>
     </section>
 
-    <!-- 기술 스택 -->
     <section>
       <h2>기술 스택</h2>
       <div class="skills-grid">
+        <span class="skill-label">DX / Agent</span>
+        <div class="skill-tags">
+          <span class="tag">Tauri 2</span>
+          <span class="tag">MITM Proxy</span>
+          <span class="tag">API Mocking</span>
+          <span class="tag">Cursor / Claude</span>
+          <span class="tag">Agent Skill</span>
+          <span class="tag">CLI</span>
+        </div>
         <span class="skill-label">Languages</span>
         <div class="skill-tags">
           <span class="tag">TypeScript</span>
@@ -513,136 +517,27 @@
         <div class="skill-tags">
           <span class="tag">Next.js</span>
           <span class="tag">React</span>
-          <span class="tag">TanStack Query</span>
-          <span class="tag">Zustand</span>
-          <span class="tag">Redux</span>
-          <span class="tag">Tailwind CSS</span>
           <span class="tag">PWA</span>
-          <span class="tag">Vitest</span>
+          <span class="tag">TanStack Query</span>
         </div>
         <span class="skill-label">Arch</span>
         <div class="skill-tags">
           <span class="tag">Turborepo</span>
           <span class="tag">pnpm workspaces</span>
           <span class="tag">Multi-tenant Monorepo</span>
-          <span class="tag">Micro-Frontend Mesh</span>
-        </div>
-        <span class="skill-label">Systems</span>
-        <div class="skill-tags">
-          <span class="tag">Tauri 2</span>
-          <span class="tag">MITM Proxy</span>
-          <span class="tag">API Mocking</span>
-          <span class="tag">Prisma</span>
-          <span class="tag">Azure DevOps</span>
+          <span class="tag">Local-First</span>
           <span class="tag">Git</span>
         </div>
       </div>
     </section>
 
-    <!-- 경력 -->
-    <section>
-      <h2>경력</h2>
-
-      <div class="job">
-        <div class="job-head">
-          <div class="job-left">
-            <span class="job-company">주식회사 와이리즘</span>
-            <span class="job-badge">Frontend PL · 팀원 3~5명</span>
-          </div>
-          <span class="job-dates">2024.11 – 현재 (재직중)</span>
-        </div>
-        <p class="job-meta">모두투어 차세대 웹 파견 · B2C / Best Partner / Online Best Partner</p>
-        <ul class="bullets">
-          <li>
-            B2C 단일 구조를 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code>로 재편 —
-            yarn → pnpm·Turborepo 모노레포로 다중 채널 확장을 리딩
-          </li>
-          <li>
-            Next.js <strong>v12 <span class="arr">→</span> v15</strong> · React 19 ·
-            Ant Design v4→v5(Less 제거) 마이그레이션 주도
-          </li>
-          <li>
-            Hono BFF·스키마 검증과 proxy-tool로 FE–BE 경계·로컬 DX 정리
-          </li>
-          <li>
-            공통 레이어·런타임 테넌트 UI로 브랜드별 화면 제공 ·
-            ONBP ~300 사이트 원소스 운영
-          </li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-head">
-          <div class="job-left">
-            <span class="job-company">주식회사 지에스아이코</span>
-            <span class="job-badge">Frontend Developer</span>
-          </div>
-          <span class="job-dates">2024.01 – 2024.10 (10개월)</span>
-        </div>
-        <p class="job-meta">YesCMS · B2B 자금관리·운영 웹</p>
-        <ul class="bullets">
-          <li>
-            수년간 쌓인 C/S 설치형 클라이언트를 React 웹으로 재설계 —
-            대형 어드민 화면 아키텍처를 신규 수립해 마이그레이션 주도
-          </li>
-          <li>
-            운영진의 반복 업무 패턴을 분석해 어드민 UI/UX 재구성,
-            실사용자 피드백 기반으로 워크플로우 단순화
-          </li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-head">
-          <div class="job-left">
-            <span class="job-company">주식회사 샵팬픽</span>
-            <span class="job-badge">Frontend Developer</span>
-          </div>
-          <span class="job-dates">2022.04 – 2023.12 (1년 9개월)</span>
-        </div>
-        <p class="job-meta">크리에이터 커머스 플랫폼</p>
-        <ul class="bullets">
-          <li>
-            SSR이 불가한 CRA 구조의 한계를 판단,
-            커머스·어드민·Studio 3개 서비스를 Next.js로 전환
-          </li>
-          <li>
-            전환 후 SSR/SSG 도입으로 SEO 가시성 확보,
-            라우터 구조 개선으로 초기 로딩 성능 개선
-          </li>
-          <li>
-            Next.js를 BFF로 도입해 Prisma 타입을 모노레포 전반에 공유 —
-            FE가 BE 의존 없이 Feature를 끝까지 소유하는 구조로 전환
-          </li>
-        </ul>
-      </div>
-
-    </section>
-  </div><!-- /body -->
-</div><!-- /page 1 -->
-
-
-<!-- ══════════════════════════════════════════
-     PAGE 2
-══════════════════════════════════════════ -->
-<div class="page">
-
-  <!-- 미니 헤더바 -->
-  <div class="mini-header">
-    <span class="mini-name">김규연 — 이력서</span>
-    <span class="mini-page">2 / 2</span>
-  </div>
-
-  <div class="body">
-
-    <!-- 프로젝트 -->
     <section>
       <h2>개인 프로젝트 (delete-horizon)</h2>
 
       <div class="proj">
         <div class="proj-head">
           <div class="proj-title-row">
-            <span class="proj-name">horizon-gateway</span>
+            <span class="proj-name">horizon-gateway <span style="font-weight:500;color:var(--muted);font-size:0.78rem;">· 2026.01</span></span>
             <div class="proj-links">
               <a href="https://gateway.delete-horizon.com" target="_blank">Live <svg class="icon icon-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
               <a href="https://github.com/GrangbelrLurain/horizon-gateway" target="_blank">GitHub <svg class="icon icon-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -652,8 +547,8 @@
         </div>
         <ul class="bullets">
           <li>
-            로컬에서 프로덕션에 가까운 환경을 재현하는 DX 데스크톱 앱 —
-            HTTPS MITM 프록시·API 모킹·도메인 헬스체크·모바일 터널링 내장
+            로컬에서 프로덕션에 가까운 환경을 재현하는 Agentic DX 데스크톱 앱.
+            HTTPS MITM 프록시, API 모킹, 도메인 헬스체크, 모바일 터널링 내장
           </li>
           <li>
             Cursor·Claude·Gemini 등 AI 에이전트가 로컬 인프라 상태를
@@ -671,7 +566,7 @@
       <div class="proj">
         <div class="proj-head">
           <div class="proj-title-row">
-            <span class="proj-name">horizon-mesh</span>
+            <span class="proj-name">horizon-mesh <span style="font-weight:500;color:var(--muted);font-size:0.78rem;">· 2026.07</span></span>
             <div class="proj-links">
               <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">Travel <svg class="icon icon-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
               <a href="https://hotel.delete-horizon.com/" target="_blank">Hotel <svg class="icon icon-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -682,28 +577,104 @@
         </div>
         <ul class="bullets">
           <li>
-            서로 다른 도메인에 독립 배포된 PWA를 공통 embed protocol로 연결 —
+            서로 다른 도메인에 독립 배포된 PWA를 공통 embed protocol로 연결.
             서버 없이 정적 배포로 Multi-Frontend App 메쉬 구현
           </li>
           <li>
-            travel·hotel·auth 모듈화,
-            IndexedDB 기반 Local-First 구조로 오프라인 동작 지원
+            travel·hotel·auth 모듈화, IndexedDB 기반 Local-First 구조로 오프라인 동작 지원
           </li>
         </ul>
         <div class="proj-url-footer">
           <span class="url-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
           <div class="url-list">
             <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">https://travel.delete-horizon.com</a>
-            <span class="sep">·</span>
+            <span class="sep">/</span>
             <a href="https://hotel.delete-horizon.com/" target="_blank">https://hotel.delete-horizon.com</a>
-            <span class="sep">·</span>
+            <span class="sep">/</span>
             <a href="https://auth.delete-horizon.com/" target="_blank">https://auth.delete-horizon.com</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 학력 -->
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+
+  <div class="mini-header">
+    <span class="mini-name">김규연 - Agentic DX Engineer</span>
+    <span class="mini-page">2 / 2</span>
+  </div>
+
+  <div class="body">
+
+    <section>
+      <h2>경력</h2>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">주식회사 와이리즘</span>
+            <span class="job-badge">Frontend PL · 팀원 3~5명</span>
+          </div>
+          <span class="job-dates">2024.11 – 현재 (재직중)</span>
+        </div>
+        <p class="job-meta">모두투어 차세대 웹 파견 · B2C / Best Partner / Online Best Partner</p>
+        <ul class="bullets">
+          <li>
+            Dev/Stage/Prod·항공/호텔 샌드박스를 바로 바꾸는 proxy-tool과
+            팀 Cursor/Claude 가이드를 만들어 온보딩·리뷰 기준을 맞춤
+          </li>
+          <li>
+            B2C·파트너 약 300개 사이트를 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code>
+            모노레포(pnpm, Turborepo)로 통합·운영
+          </li>
+          <li>
+            Next.js v12→v15 · React 19 · Ant Design v4→v5(Less 제거) 마이그레이션 주도
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">주식회사 지에스아이코</span>
+            <span class="job-badge">Frontend Developer</span>
+          </div>
+          <span class="job-dates">2024.01 – 2024.10 (10개월)</span>
+        </div>
+        <p class="job-meta">YesCMS · B2B 자금관리·운영 웹 · KFTC 오픈뱅킹</p>
+        <ul class="bullets">
+          <li>
+            Windows C/S를 React 웹 어드민으로 재설계, 주요 화면 약 30개 마이그레이션 주도
+          </li>
+          <li>
+            KFTC 오픈뱅킹 출금·수납·원장 화면의 상태 관리, 검증, 예외/재처리를 FE에서 소유
+          </li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div class="job-left">
+            <span class="job-company">주식회사 샵팬픽</span>
+            <span class="job-badge">Frontend Developer</span>
+          </div>
+          <span class="job-dates">2022.04 – 2023.12 (1년 9개월)</span>
+        </div>
+        <p class="job-meta">크리에이터 커머스 플랫폼</p>
+        <ul class="bullets">
+          <li>
+            CRA 3개 서비스를 Next.js 모노레포로 전환하고,
+            Next BFF + Prisma 타입 공유로 FE가 Feature를 끝까지 배포하는 구조로 바꿈
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
     <section>
       <h2>학력</h2>
       <div class="edu-row">
@@ -712,8 +683,8 @@
       </div>
     </section>
 
-  </div><!-- /body -->
-</div><!-- /page 2 -->
+  </div>
+</div>
 
 </body>
 </html>

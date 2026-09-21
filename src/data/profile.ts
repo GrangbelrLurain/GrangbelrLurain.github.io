@@ -24,7 +24,17 @@ export const profile = {
     {
       href: '/resumes/kyuyeon-kim-ko.html',
       download: 'kyuyeon-kim-resume-ko.html',
-      label: { kr: '이력서 KO', en: 'Resume KO' },
+      label: { kr: '이력서 FE PL', en: 'Resume FE PL' },
+    },
+    {
+      href: '/resumes/kyuyeon-kim-fullstack-ko.html',
+      download: 'kyuyeon-kim-resume-fullstack-ko.html',
+      label: { kr: '이력서 Product', en: 'Resume Product' },
+    },
+    {
+      href: '/resumes/kyuyeon-kim-agentic-ko.html',
+      download: 'kyuyeon-kim-resume-agentic-ko.html',
+      label: { kr: '이력서 Agentic', en: 'Resume Agentic' },
     },
     {
       href: '/resumes/kyuyeon-kim-en.html',
