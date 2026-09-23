@@ -423,12 +423,12 @@
     <section>
       <h2>About</h2>
       <p class="summary">
-        Frontend engineer with 4+ years building TypeScript monorepos, multi-tenant Next.js platforms,
-        and Rust-based developer tooling. Currently leading FE on a large-scale travel e-commerce platform
-        (B2C + partner, 3 tenants). On the side, independently built and currently running
-        <strong>horizon-gateway</strong> (local DX desktop app) and <strong>horizon-mesh</strong>
-        (independently hosted front-end mesh). Available for part-time or contract remote — can own features end-to-end
-        without hand-holding.
+        I began in commerce frontend, then converted business systems to the web.
+        I now lead frontend for Modetour's next-generation site, across B2C and partner channels.<br>
+        I design the boundary between shared modules and channel-specific implementations
+        so those channels can be developed in one Next.js monorepo.<br>
+        As team lead, I designed a CI test harness so only changes that meet the bar are released.
+        On the side, I run horizon-gateway, which controls local traffic, and horizon-mesh, which combines independently deployed frontends into one product.
       </p>
     </section>
 
@@ -537,16 +537,16 @@
         <div class="job-head">
           <div class="job-left">
             <span class="job-company">YRISM (dispatched to Modetour)</span>
-            <span class="job-badge">Frontend Lead · 3–5 engineers</span>
+            <span class="job-badge">Frontend Lead, team of 6</span>
           </div>
           <span class="job-dates">Nov 2024 – Present</span>
         </div>
-        <p class="job-meta">Next-gen travel e-commerce platform · B2C / Best Partner / Online Best Partner</p>
+        <p class="job-meta">Next-gen travel platform. B2C / Best Partner / Online Best Partner. 1,490 commits, 669 merged PRs</p>
         <ul class="bullets">
-          <li>Restructured single-B2C into <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> — led yarn → pnpm·Turborepo for multi-channel expansion</li>
-          <li>Led Next.js <strong>v12 <span class="arr">→</span> v15</strong>, React 19, and Ant Design v4→v5 (dropped Less) migrations</li>
-          <li>Hardened FE–BE boundaries with Hono BFF + schema validation, and local DX via proxy-tool</li>
-          <li>Runtime tenant UI for brand surfaces · single-source ops for ~300 ONBP sites</li>
+          <li>Reorganized the single B2C tree into <code>core</code>, <code>web-b2c</code>, and <code>web-onbp</code>, consolidating shared modules in <code>core</code> and standardizing package dependency references</li>
+          <li>Set package reference and type integrity as CI criteria, with tests on critical features, so noncompliant changes do not merge</li>
+          <li>Revised encryption and personal-data handling to meet ISMS requirements, moving that processing off the client</li>
+          <li>Upgraded Next.js 12 to 15, React 19, and Ant Design 4 to 5, keeping channel apps and <code>core</code> on the same majors</li>
         </ul>
       </div>
 

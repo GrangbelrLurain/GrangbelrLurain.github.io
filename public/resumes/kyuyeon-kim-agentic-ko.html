@@ -487,11 +487,10 @@
     <section>
       <h2>소개</h2>
       <p class="summary">
-        모두투어 차세대 웹 FE PL로 B2C·파트너 약 300개 사이트를 Next.js 모노레포로 운영하면서,
-        로컬 재현(proxy-tool)과 Cursor/Claude 가이드로 팀 온보딩·리뷰 기준을 맞춘다.<br>
-        사이드로 horizon-gateway에 에이전트용 CLI·Agent Skill을 만들어,
-        로컬 인프라 상태를 에이전트가 읽고 다루게 한다.<br>
-        FE로 제품을 만들되, 팀이 반복하는 판단은 도구와 컨벤션으로 먼저 줄이는 쪽으로 일한다.
+        커머스 프론트엔드로 시작해 업무 시스템을 웹으로 전환했고, 현재는 모두투어 차세대 웹 FE를 이끌면서
+        에이전틱 워크플로우를 구성하고 있습니다.<br>
+        에이전트 스킬로 로컬 트래픽을 제어할 수 있도록 horizon-gateway를 구성했습니다.<br>
+        프로젝트별 컨텍스트 스킬을 적용하고, CI 테스트 정적 분석으로 워크플로우 루프를 구성했습니다.
       </p>
     </section>
 
@@ -617,22 +616,27 @@
         <div class="job-head">
           <div class="job-left">
             <span class="job-company">주식회사 와이리즘</span>
-            <span class="job-badge">Frontend PL · 팀원 3~5명</span>
+            <span class="job-badge">Frontend PL, 팀 6명</span>
           </div>
           <span class="job-dates">2024.11 – 현재 (재직중)</span>
         </div>
-        <p class="job-meta">모두투어 차세대 웹 파견 · B2C / Best Partner / Online Best Partner</p>
+        <p class="job-meta">모두투어 차세대 웹 파견. B2C / Best Partner / Online Best Partner. 커밋 1,490, 머지 PR 669</p>
         <ul class="bullets">
           <li>
-            Dev/Stage/Prod·항공/호텔 샌드박스를 바로 바꾸는 proxy-tool과
-            팀 Cursor/Claude 가이드를 만들어 온보딩·리뷰 기준을 맞춤
+            프로젝트별 컨텍스트 스킬을 적용하고,
+            CI 테스트 정적 분석으로 워크플로우 루프를 구성
           </li>
           <li>
-            B2C·파트너 약 300개 사이트를 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code>
-            모노레포(pnpm, Turborepo)로 통합·운영
+            B2C 단일 구성을 <code>core</code>, <code>web-b2c</code>, <code>web-onbp</code>로 재편하고,
+            공통 모듈을 <code>core</code>에 모아 중복을 없앤 뒤 패키지 참조 의존성을 체계화
           </li>
           <li>
-            Next.js v12→v15 · React 19 · Ant Design v4→v5(Less 제거) 마이그레이션 주도
+            ISMS 기준에 맞추어 암복호와 개인정보 처리 로직을 정비하고,
+            해당 처리를 클라이언트 밖으로 재구성
+          </li>
+          <li>
+            Next.js 12에서 15, React 19, Ant Design 4에서 5로 올리고
+            채널 앱과 <code>core</code>의 메이저 버전을 맞춤
           </li>
         </ul>
       </div>
