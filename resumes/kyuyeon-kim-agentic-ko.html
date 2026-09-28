@@ -38,7 +38,7 @@
     }
 
     /* ══════════════════════════════════════════
-       페이지 래퍼 — 각 div.page가 A4 한 장
+       페이지 래퍼  -  각 div.page가 A4 한 장
     ══════════════════════════════════════════ */
     .page {
       width: 210mm;
@@ -70,7 +70,7 @@
     }
 
     /* ══════════════════════════════════════════
-       P1 헤더 — 다크 네이비
+       P1 헤더  -  다크 네이비
     ══════════════════════════════════════════ */
     .main-header {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
@@ -431,7 +431,7 @@
     .edu-name { font-weight: 700; color: var(--ink); font-size: 0.9rem; }
     .edu-detail { font-size: 0.8rem; color: var(--muted); }
 
-    /* ── 인쇄 공통: 링크 보존 및 가시성 설정 ── */
+    /* ── 인쇄 공통: 링크 보존 및 표시 설정 ── */
     @media print {
       .page {
         overflow: visible !important;
@@ -487,10 +487,9 @@
     <section>
       <h2>소개</h2>
       <p class="summary">
-        커머스 프론트엔드로 시작해 업무 시스템을 웹으로 전환했고, 현재는 모두투어 차세대 웹 FE를 이끌면서
-        에이전틱 워크플로우를 구성하고 있습니다.<br>
-        에이전트 스킬로 로컬 트래픽을 제어할 수 있도록 horizon-gateway를 구성했습니다.<br>
-        프로젝트별 컨텍스트 스킬을 적용하고, CI 테스트 정적 분석으로 워크플로우 루프를 구성했습니다.
+        샵팬픽에서 크리에이터 커머스 프론트엔드로 시작했고, 지에스아이코에서 Windows 설치형 금융 어드민을 React 웹으로 옮겼습니다.
+        현재는 와이리즘 소속으로 모두투어 차세대 웹의 FE PL을 맡아, B2C와 파트너 사이트 570여 개를 하나의 Next.js 모노레포에서 개발하고 있습니다.
+        개인 프로젝트는 horizon-gateway와 horizon-mesh (실험 중)입니다.
       </p>
     </section>
 
@@ -545,14 +544,9 @@
           <span class="proj-tech">Rust · Tauri 2 · React · TypeScript</span>
         </div>
         <ul class="bullets">
-          <li>
-            로컬에서 프로덕션에 가까운 환경을 재현하는 Agentic DX 데스크톱 앱.
-            HTTPS MITM 프록시, API 모킹, 도메인 헬스체크, 모바일 터널링 내장
-          </li>
-          <li>
-            Cursor·Claude·Gemini 등 AI 에이전트가 로컬 인프라 상태를
-            직접 인식·오케스트레이션할 수 있는 CLI 및 Agent Skill 구축
-          </li>
+          <li>로컬에서 프로덕션에 가까운 환경을 재현하는 Agentic DX 데스크톱 앱</li>
+          <li>HTTPS MITM 프록시, API 모킹, 도메인 헬스체크, 모바일 터널링 내장</li>
+          <li>Cursor, Claude, Gemini가 로컬 인프라 상태를 읽는 CLI 및 Agent Skill 구축</li>
         </ul>
         <div class="proj-url-footer">
           <span class="url-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
@@ -565,7 +559,7 @@
       <div class="proj">
         <div class="proj-head">
           <div class="proj-title-row">
-            <span class="proj-name">horizon-mesh <span style="font-weight:500;color:var(--muted);font-size:0.78rem;">· 2026.07</span></span>
+            <span class="proj-name">horizon-mesh (실험 중) <span style="font-weight:500;color:var(--muted);font-size:0.78rem;">· 2026.07</span></span>
             <div class="proj-links">
               <a href="https://travel.delete-horizon.com/?mode=edit" target="_blank">Travel <svg class="icon icon-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
               <a href="https://hotel.delete-horizon.com/" target="_blank">Hotel <svg class="icon icon-ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
@@ -575,13 +569,9 @@
           <span class="proj-tech">Turborepo · React · TypeScript · PWA · Cloudflare Pages</span>
         </div>
         <ul class="bullets">
-          <li>
-            서로 다른 도메인에 독립 배포된 PWA를 공통 embed protocol로 연결.
-            서버 없이 정적 배포로 Multi-Frontend App 메쉬 구현
-          </li>
-          <li>
-            travel·hotel·auth 모듈화, IndexedDB 기반 Local-First 구조로 오프라인 동작 지원
-          </li>
+          <li>서로 다른 도메인에 배포한 PWA를 공통 embed protocol로 연결하는 실험</li>
+          <li>travel, hotel, auth를 Cloudflare Pages에 정적 배포</li>
+          <li>IndexedDB 기반 Local-First로 오프라인 동작</li>
         </ul>
         <div class="proj-url-footer">
           <span class="url-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
@@ -622,22 +612,12 @@
         </div>
         <p class="job-meta">모두투어 차세대 웹 파견. B2C / Best Partner / Online Best Partner. 커밋 1,490, 머지 PR 669</p>
         <ul class="bullets">
-          <li>
-            프로젝트별 컨텍스트 스킬을 적용하고,
-            CI 테스트 정적 분석으로 워크플로우 루프를 구성
-          </li>
-          <li>
-            B2C 단일 구성을 <code>core</code>, <code>web-b2c</code>, <code>web-onbp</code>로 재편하고,
-            공통 모듈을 <code>core</code>에 모아 중복을 없앤 뒤 패키지 참조 의존성을 체계화
-          </li>
-          <li>
-            ISMS 기준에 맞추어 암복호와 개인정보 처리 로직을 정비하고,
-            해당 처리를 클라이언트 밖으로 재구성
-          </li>
-          <li>
-            Next.js 12에서 15, React 19, Ant Design 4에서 5로 올리고
-            채널 앱과 <code>core</code>의 메이저 버전을 맞춤
-          </li>
+          <li>B2C 단일 앱을 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> 패키지로 분리</li>
+          <li>Online Best Partner 파트너 사이트 570여 개를 원소스로 운영</li>
+          <li>Hono BFF(<code>@b2c/server</code>, <code>@onbp/server</code>)와 Zod로 FE Model / Mapper 계층 구축</li>
+          <li>Next.js 12에서 15, React 19, Ant Design 4에서 5로 업그레이드하고 Less 제거</li>
+          <li>CI 테스트 하네스를 설계해 타입·패키지 참조·주요 기능 테스트를 통과한 변경만 머지</li>
+          <li>ISMS 기준에 맞춰 암복호·개인정보 처리를 클라이언트 밖으로 이동</li>
         </ul>
       </div>
 
@@ -649,14 +629,12 @@
           </div>
           <span class="job-dates">2024.01 – 2024.10 (10개월)</span>
         </div>
-        <p class="job-meta">YesCMS · B2B 자금관리·운영 웹 · KFTC 오픈뱅킹</p>
+        <p class="job-meta">YesCMS B2B 자금관리 웹 · 금융결제원 CMS 출금이체 연계</p>
         <ul class="bullets">
-          <li>
-            Windows C/S를 React 웹 어드민으로 재설계, 주요 화면 약 30개 마이그레이션 주도
-          </li>
-          <li>
-            KFTC 오픈뱅킹 출금·수납·원장 화면의 상태 관리, 검증, 예외/재처리를 FE에서 소유
-          </li>
+          <li>Windows C/S 설치형 클라이언트를 React 웹 어드민으로 전환</li>
+          <li>주요 화면 약 30개 마이그레이션 주도</li>
+          <li>금융결제원 CMS 출금이체 기반 출금·수납·원장 화면의 상태 관리, 검증, 재시도 처리를 FE에서 담당</li>
+          <li>고밀도 금융 그리드 테이블에 가상화 적용</li>
         </ul>
       </div>
 
@@ -670,10 +648,9 @@
         </div>
         <p class="job-meta">크리에이터 커머스 플랫폼</p>
         <ul class="bullets">
-          <li>
-            CRA 3개 서비스를 Next.js 모노레포로 전환하고,
-            Next BFF + Prisma 타입 공유로 FE가 Feature를 끝까지 배포하는 구조로 바꿈
-          </li>
+          <li>커머스·어드민·Studio CRA 앱 3개를 Next.js 모노레포로 전환하고 SSR/SSG 적용</li>
+          <li>Next.js API Routes를 BFF로 두고 Prisma 타입을 모노레포 전반에 공유</li>
+          <li>CMS 콘텐츠 타입, 재귀 구조 Excel 입출력, 서버리스 zip 암호화 다운로드 구현</li>
         </ul>
       </div>
 
@@ -683,7 +660,7 @@
       <h2>학력</h2>
       <div class="edu-row">
         <span class="edu-name">인제고등학교</span>
-        <span class="edu-detail">이과 졸업 · 2013.02</span>
+        <span class="edu-detail">이과 · 2010.04 – 2013.02</span>
       </div>
     </section>
 
