@@ -34,7 +34,7 @@ export type Company = {
   groups?: TaskGroup[]
   tasks?: TaskItem[]
   tech: string[]
-  links?: { label: string; href: string }[]
+  links?: { label: string | LocaleText; href: string }[]
 }
 
 export type Project = {

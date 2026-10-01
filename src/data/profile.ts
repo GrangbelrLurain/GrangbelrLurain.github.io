@@ -1,18 +1,34 @@
 import type { LocaleText, Metric, Project, SkillRow } from './types'
 
+/** 총 경력 시작 (facts.md: 2022.04~, 공백 없음) */
+const CAREER_START = { year: 2022, month: 4 }
+
+/** 잡코리아식: 입사 월과 현재 월 모두 포함. 2026-10 → "4년 7개월" */
+export function careerLengthKr(now: Date = new Date()): string {
+  const months =
+    (now.getFullYear() - CAREER_START.year) * 12 +
+    (now.getMonth() + 1 - CAREER_START.month) +
+    1
+  const y = Math.floor(months / 12)
+  const m = months % 12
+  return m === 0 ? `${y}년` : `${y}년 ${m}개월`
+}
+
+const CAREER_KR = careerLengthKr()
+
 export const profile = {
   name: { kr: '김규연', en: 'Kyuyeon Kim' } satisfies LocaleText,
   title: {
-    kr: '프론트엔드 리드 · FE PL (4년 5개월 차)',
-    en: 'Frontend Lead · FE PL (4+ Years Exp)',
+    kr: '파트너 사이트 570여 개를 원소스 멀티테넌트로 운영하는 프론트엔드 PL',
+    en: 'Frontend Lead running 570+ partner sites from one Next.js codebase',
   } satisfies LocaleText,
   tagline: {
     kr: '"도메인이 복잡할수록 구조를 먼저 잡고, 공통 모듈과 빌드·배포 체계로 반복 비용을 줄입니다."',
     en: '"When domains get complex, I start with structure — cutting repeat cost through shared modules and build/release systems."',
   } satisfies LocaleText,
   brandRole: {
-    kr: 'FE PL · Frontend Lead',
-    en: 'FE Lead · Frontend PL',
+    kr: 'Frontend Lead · FE PL',
+    en: 'Frontend Lead',
   } satisfies LocaleText,
   email: 'lurain003@gmail.com',
   github: 'https://github.com/GrangbelrLurain',
@@ -24,7 +40,7 @@ export const profile = {
     {
       href: '/resumes/kyuyeon-kim-ko.html',
       download: 'kyuyeon-kim-resume-ko.html',
-      label: { kr: '이력서 FE PL', en: 'Resume FE PL' },
+      label: { kr: '이력서 FE PL', en: 'Resume Frontend Lead' },
     },
     {
       href: '/resumes/kyuyeon-kim-fullstack-ko.html',
@@ -44,7 +60,7 @@ export const profile = {
   ],
   metaDescription: {
     kr: '프론트엔드 리드 · FE PL 김규연 포트폴리오. 모두투어 차세대 웹 FE PL, pnpm/Turborepo 멀티테넌트 모노레포, Rust/Tauri 2 DX, PWA 메쉬.',
-    en: 'Portfolio of Kyuyeon Kim — Frontend Lead · FE PL. Modetour next-gen FE PL, pnpm/Turborepo multi-tenant monorepo, Rust/Tauri 2 DX, PWA mesh.',
+    en: 'Portfolio of Kyuyeon Kim, Frontend Lead running 570+ partner sites from one Next.js codebase. pnpm/Turborepo multi-tenant monorepo, Rust/Tauri 2 DX, PWA mesh.',
   },
 }
 
@@ -57,7 +73,7 @@ export const metrics: Metric[] = [
     },
   },
   {
-    value: '300+',
+    value: '570+',
     label: {
       kr: '멀티테넌트 파트너(ONBP) 사이트',
       en: 'Multi-tenant Partner (ONBP) Sites',
@@ -81,12 +97,12 @@ export const metrics: Metric[] = [
 
 export const aboutParagraphs: LocaleText[] = [
   {
-    kr: '안녕하세요. <strong>프론트엔드 리드 · FE PL 김규연</strong>입니다.',
-    en: 'I am <strong>Kyuyeon Kim</strong>, a <strong>Frontend Lead · FE PL with 4+ years of experience</strong> based in South Korea.',
+    kr: `안녕하세요. 경력 ${CAREER_KR} 차 <strong>프론트엔드 리드 · FE PL 김규연</strong>입니다.`,
+    en: 'I am <strong>Kyuyeon Kim</strong>, a <strong>Frontend Lead with 4+ years of experience</strong> based in South Korea.',
   },
   {
-    kr: '크리에이터 커머스(샵팬픽)로 시작해 B2B 자금관리(지에스아이코 · KFTC 오픈뱅킹)를 거쳐, 현재는 <strong>와이리즘에서 모두투어 차세대 웹 FE PL</strong>로서 B2C 및 약 300여 개 파트너사(ONBP)를 아우르는 <strong>Next.js 멀티테넌트 모노레포</strong>를 설계·리딩합니다.',
-    en: 'Starting in creator commerce (ShopFanPick) and B2B cash management (GSIKO · KFTC), I now lead Modetour next-gen web as FE PL at YRISM — designing a <strong>Next.js multi-tenant monorepo</strong> for B2C and ~300 partner (ONBP) sites.',
+    kr: '크리에이터 커머스(샵팬픽)로 시작해 B2B 자금관리(지에스아이코 · 금융결제원 CMS 출금이체)를 거쳐, 현재는 <strong>와이리즘에서 모두투어 차세대 웹 FE PL</strong>(팀 6명)로서 B2C 및 570여 개 파트너 사이트(ONBP)를 아우르는 <strong>Next.js 멀티테넌트 모노레포</strong>를 설계·리딩합니다.',
+    en: 'Starting in creator commerce (ShopFanPick) and B2B cash management (GSIKO · KFTC), I now lead Modetour next-gen web as Frontend Lead at YRISM (team of 6), designing a <strong>Next.js multi-tenant monorepo</strong> for B2C and 570+ partner (ONBP) sites.',
   },
   {
     kr: '호텔·항공·검색·예약·인증·프로모션 등 핵심 도메인 차세대 개편을 리딩하고, <code>web-b2c</code>/<code>web-onbp</code>/<code>core</code> 패키지 경계, pnpm·Turborepo 빌드, React 19 공통 패키지, UI playground까지 <strong>기능 개발과 플랫폼 기반을 함께</strong> 책임집니다.',
@@ -102,10 +118,10 @@ export const projects: Project[] = [
   {
     id: 'horizon-gateway',
     name: 'horizon-gateway',
-    techLine: 'Rust · Tauri 2 · React · TypeScript · TanStack · Release v2.6.0',
+    techLine: 'Rust · Tauri 2 · React · TypeScript · TanStack',
     links: [
       { label: 'Live ↗', href: 'https://gateway.delete-horizon.com' },
-      { label: 'GitHub ↗', href: 'https://github.com/GrangbelrLurain/horizon-gateway' },
+      { label: 'GitHub ↗', href: 'https://github.com/delete-horizon/horizon-gateway' },
     ],
     bullets: [
       {
@@ -130,9 +146,7 @@ export const projects: Project[] = [
     name: 'horizon-mesh',
     techLine: 'Turborepo · React · TypeScript · PWA · Cloudflare Pages',
     links: [
-      { label: 'Travel ↗', href: 'https://travel.delete-horizon.com/?mode=edit' },
-      { label: 'Hotel ↗', href: 'https://hotel.delete-horizon.com/' },
-      { label: 'Auth ↗', href: 'https://auth.delete-horizon.com/' },
+      { label: 'Travel ↗', href: 'https://travel.delete-horizon.com/' },
     ],
     bullets: [
       {
@@ -145,9 +159,7 @@ export const projects: Project[] = [
       },
     ],
     footerUrls: [
-      { label: 'https://travel.delete-horizon.com', href: 'https://travel.delete-horizon.com/?mode=edit' },
-      { label: 'https://hotel.delete-horizon.com', href: 'https://hotel.delete-horizon.com/' },
-      { label: 'https://auth.delete-horizon.com', href: 'https://auth.delete-horizon.com/' },
+      { label: 'https://travel.delete-horizon.com', href: 'https://travel.delete-horizon.com/' },
     ],
   },
 ]

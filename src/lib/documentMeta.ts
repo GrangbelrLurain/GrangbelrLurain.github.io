@@ -10,17 +10,17 @@ export const localeMeta = {
     description: profile.metaDescription.kr,
     ogTitle: '김규연 | Frontend Lead · FE PL',
     ogDescription:
-      'Next.js 멀티테넌트 모노레포, Rust/Tauri 2 DX, PWA 메쉬를 설계하는 프론트엔드 리드 김규연입니다.',
+      '파트너 사이트 570여 개를 원소스 멀티테넌트로 운영하는 프론트엔드 PL 김규연입니다.',
     ogUrl: `${SITE}/ko/`,
     ogLocale: 'ko_KR',
   },
   en: {
     htmlLang: 'en',
-    title: 'Kyuyeon Kim | Frontend Lead · FE PL',
+    title: 'Kyuyeon Kim | Frontend Lead',
     description: profile.metaDescription.en,
-    ogTitle: 'Kyuyeon Kim | Frontend Lead · FE PL',
+    ogTitle: 'Kyuyeon Kim | Frontend Lead',
     ogDescription:
-      'Frontend Lead Kyuyeon Kim — Next.js multi-tenant monorepo, Rust/Tauri 2 DX, and PWA mesh.',
+      'Kyuyeon Kim, Frontend Lead running 570+ partner sites from one Next.js codebase.',
     ogUrl: `${SITE}/en/`,
     ogLocale: 'en_US',
   },
