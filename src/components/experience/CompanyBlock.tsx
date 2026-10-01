@@ -52,7 +52,7 @@ export function CompanyBlock({ company }: { company: Company }) {
             <span key={link.href}>
               {i > 0 ? <span className="link-sep"> · </span> : null}
               <a href={link.href} target="_blank" rel="noreferrer">
-                {link.label.replace(/\s*↗\s*$/, '')}
+                {(typeof link.label === 'string' ? link.label : t(link.label)).replace(/\s*↗\s*$/, '')}
               </a>
             </span>
           ))}

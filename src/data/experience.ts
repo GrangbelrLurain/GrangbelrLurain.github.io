@@ -17,7 +17,7 @@ export const companies: Company[] = [
   {
     id: 'yrism',
     name: { kr: '주식회사 와이리즘 (YRISM)', en: 'YRISM Inc.' },
-    badge: { kr: 'Frontend PL · 팀원 3~5명', en: 'Frontend Lead · Team of 3–5' },
+    badge: { kr: 'Frontend PL · 팀 6명', en: 'Frontend Lead · Team of 6' },
     date: '2024.11 – Present',
     subtitle: {
       kr: '모두투어 차세대 웹 플랫폼 파견 · B2C / Best Partner / Online Best Partner',
@@ -37,8 +37,8 @@ export const companies: Company[] = [
         en: 'Hardened FE–BE boundaries with Hono BFFs (@b2c/server · @onbp/server) and Zod/schema pipelines',
       },
       {
-        kr: 'proxy-tool로 Dev/Stage/Prod·항공·호텔·제휴 엔드포인트를 전환하는 로컬 DX를 구축 · ONBP ~300 사이트 원소스 운영',
-        en: 'Built proxy-tool DX for Dev/Stage/Prod and airline/hotel/partner endpoints · single-source ops for ~300 ONBP sites',
+        kr: 'proxy-tool로 Dev/Stage/Prod·항공·호텔·제휴 엔드포인트를 전환하는 로컬 DX를 구축 · ONBP 570여 개 사이트 원소스 운영',
+        en: 'Built proxy-tool DX for Dev/Stage/Prod and airline/hotel/partner endpoints · single-source ops for 570+ ONBP sites',
       },
     ],
     groups: [
@@ -57,7 +57,7 @@ export const companies: Company[] = [
             },
             description: {
               kr: 'B2C·B2B PC/MO 웹 서비스 전면 재구축을 FE PL로 리딩',
-              en: 'Led B2C & B2B PC/MO platform rebuild as FE PL',
+              en: 'Led B2C & B2B PC/MO platform rebuild as Frontend Lead',
             },
           },
           {
@@ -124,8 +124,8 @@ export const companies: Company[] = [
               en: 'Large-scale Turborepo FE Monorepo',
             },
             description: {
-              kr: '약 300개 BP/ONBP 프론트를 통합 관리하고 Docker pipeline에 turborepo/Next 캐시를 적용해 빌드 부담을 줄임',
-              en: 'Unified ~300 BP/ONBP frontends and cut build burden with turborepo/Next caches in Docker pipelines',
+              kr: '570여 개 BP/ONBP 프론트를 통합 관리하고 Docker pipeline에 turborepo/Next 캐시를 적용해 빌드 부담을 줄임',
+              en: 'Unified 570+ BP/ONBP frontends and cut build burden with turborepo/Next caches in Docker pipelines',
             },
           },
           {
@@ -310,8 +310,7 @@ export const companies: Company[] = [
     ],
     links: [
       { label: 'Modetour.com ↗', href: 'https://www.modetour.com' },
-      { label: 'ONBP Demo 1 ↗', href: 'https://go.modetour.co.kr/' },
-      { label: 'ONBP Demo 2 ↗', href: 'https://gentlemonster.modetour.com/' },
+      { label: { kr: 'ONBP 파트너 사이트 예시 ↗', en: 'ONBP partner site example ↗' }, href: 'https://go.modetour.co.kr/' },
     ],
   },
 
@@ -321,8 +320,8 @@ export const companies: Company[] = [
     badge: { kr: 'Frontend Developer', en: 'Frontend Developer' },
     date: '2024.01 – 2024.10',
     subtitle: {
-      kr: 'YesCMS · B2B 자금관리·운영 웹 & KFTC 오픈뱅킹',
-      en: 'YesCMS · B2B ops web & KFTC Open Banking',
+      kr: 'YesCMS B2B 자금관리 웹 · 금융결제원 CMS 출금이체 연계',
+      en: 'YesCMS B2B cash-management web · KFTC CMS direct debit',
     },
     impacts: [
       {
@@ -330,7 +329,7 @@ export const companies: Company[] = [
         en: 'Fully re-architected a Windows C/S cash-management client into a React web admin',
       },
       {
-        kr: 'KFTC 오픈뱅킹 연동 — 출금·수납·원장 화면의 상태·검증·에러 플로우를 FE에서 담당',
+        kr: '금융결제원 CMS 출금이체와 연동된 출금·수납·원장 화면의 상태·검증·에러 플로우를 FE에서 담당',
         en: 'Owned FE state, validation, and error flows for KFTC-linked withdrawal, collection, and ledger screens',
       },
       {
@@ -434,7 +433,7 @@ export const companies: Company[] = [
       'Zustand',
       'TanStack Query',
       'Tailwind CSS',
-      'KFTC Open Banking',
+      'KFTC CMS Direct Debit',
       'Git',
     ],
   },
