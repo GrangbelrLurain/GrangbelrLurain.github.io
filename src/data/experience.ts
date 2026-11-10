@@ -1,7 +1,7 @@
 import type { Company } from './types'
 
 const badge = {
-  nextgen: { kr: '차세대', en: 'Next-Gen', variant: 'nextgen' as const },
+  nextgen: { kr: '도메인', en: 'Domain', variant: 'nextgen' as const },
   ops: { kr: '운영', en: 'Ops', variant: 'ops' as const },
   arch: { kr: '아키텍처', en: 'Arch', variant: 'arch' as const },
   refac: { kr: '리팩토링', en: 'Refactor', variant: 'refac' as const },
@@ -9,9 +9,13 @@ const badge = {
   infra: { kr: '인프라', en: 'Infra', variant: 'infra' as const },
 }
 
+const lead = { ...badge.ops, kr: '리드', en: 'Lead' }
+
 /**
- * Experience bullets — 규모는 테넌트·사이트·도메인·버전 등 방어 가능한 단위로.
- * 서술 주체는 FE PL / 담당 FE 역할·오너십으로 통일. 팀 커밋 수치는 쓰지 않음.
+ * Experience bullets.
+ * - 결과가 보이게: "무엇을 했다"보다 "그래서 어떤 구조/상태가 됐다"까지 쓴다.
+ * - 외부인이 모르는 사내 식별자(HOC 이름, 내부 API명 등)는 쓰지 않는다.
+ * - 마일스톤 날짜는 Modetour_PlatformWeb git 이력 기준.
  */
 export const companies: Company[] = [
   {
@@ -20,293 +24,148 @@ export const companies: Company[] = [
     badge: { kr: 'Frontend PL · 팀 6명', en: 'Frontend Lead · Team of 6' },
     date: '2024.11 – Present',
     subtitle: {
-      kr: '모두투어 차세대 웹 플랫폼 파견 · B2C / Best Partner / Online Best Partner',
-      en: 'Modetour Next-Gen Platform · B2C / Best Partner / Online Best Partner',
+      kr: '모두투어 차세대 웹 플랫폼 파견 · B2C / Best Partner / Online Best Partner (PC·MO)',
+      en: 'Modetour next-gen web platform · B2C / Best Partner / Online Best Partner (PC·MO)',
     },
     impacts: [
       {
-        kr: 'B2C 단일 구조를 core / web-b2c / web-onbp로 재편하고, yarn Berry → pnpm·Turborepo 모노레포로 다중 채널 확장을 리딩',
-        en: 'Restructured single-B2C into core / web-b2c / web-onbp and led yarn Berry → pnpm·Turborepo for multi-channel expansion',
+        kr: '레거시 단일 B2C 앱을 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> 워크스페이스로 재편해, <strong>B2C·BP·ONBP 3채널 × PC·MO를 한 저장소에서 빌드·배포</strong>하는 구조로 전환',
+        en: 'Rebuilt a legacy single B2C app into <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> workspaces so <strong>3 channels (B2C, BP, ONBP) × PC/MO build and ship from one repo</strong>',
       },
       {
-        kr: 'Next.js 12→15 · React 19 · Ant Design v4→v5 마이그레이션을 주도하고 Less 빌드 체인을 제거',
-        en: 'Led Next.js 12→15, React 19, and Ant Design v4→v5 migrations, removing the Less build chain',
+        kr: 'pnpm 전환(2025.11) → Turborepo·빌드 캐시(2026.01) → <strong>Next.js 12 → 15 · React 19 · Ant Design 5</strong>(2026.06)를 as-is 서비스 병행 운영 중에 단계적으로 리딩',
+        en: 'Led a staged upgrade path — pnpm (Nov 2025) → Turborepo + build cache (Jan 2026) → <strong>Next.js 12 → 15, React 19, Ant Design 5</strong> (Jun 2026) — while the legacy site stayed live',
       },
       {
-        kr: 'Hono BFF(@b2c/server·@onbp/server)와 Zod/스키마 파이프라인으로 FE–BE 경계를 타입 안전하게 정리',
-        en: 'Hardened FE–BE boundaries with Hono BFFs (@b2c/server · @onbp/server) and Zod/schema pipelines',
+        kr: '타입·패키지 참조·주요 기능 테스트를 통과해야만 머지되는 <strong>CI 게이트</strong>를 설계하고, 배포 파이프라인을 Build/Deploy로 분리',
+        en: 'Designed a <strong>CI merge gate</strong> (types, package references, key feature tests) and split the release pipeline into Build and Deploy stages',
       },
       {
-        kr: 'proxy-tool로 Dev/Stage/Prod·항공·호텔·제휴 엔드포인트를 전환하는 로컬 DX를 구축 · ONBP 570여 개 사이트 원소스 운영',
-        en: 'Built proxy-tool DX for Dev/Stage/Prod and airline/hotel/partner endpoints · single-source ops for 570+ ONBP sites',
+        kr: 'ISMS 대응으로 <strong>클라이언트 암복호를 제거하고 개인정보 처리를 BFF로 이전</strong>',
+        en: 'For ISMS compliance, <strong>removed client-side crypto and moved personal-data handling into the BFF</strong>',
       },
     ],
     groups: [
       {
-        heading: {
-          kr: '핵심 도메인 & 서비스 차세대 개편',
-          en: 'Core Domain Services',
-        },
+        heading: { kr: '플랫폼 구조', en: 'Platform architecture' },
         tasks: [
           {
-            category: 'nextgen',
-            badge: badge.nextgen,
-            title: {
-              kr: '모두투어 프론트엔드 서비스 차세대 개발',
-              en: 'Modetour Platform Reconstruction',
-            },
+            category: 'arch',
+            badge: badge.arch,
+            title: { kr: '원소스 멀티테넌트', en: 'Single-source multi-tenancy' },
             description: {
-              kr: 'B2C·B2B PC/MO 웹 서비스 전면 재구축을 FE PL로 리딩',
-              en: 'Led B2C & B2B PC/MO platform rebuild as Frontend Lead',
+              kr: '접속 도메인으로 사이트 설정을 불러와 API 요청에 실어 보내는 구조로, B2C와 570여 개 ONBP 파트너 사이트를 하나의 코드베이스로 운영',
+              en: 'Site config is resolved from the incoming domain and sent with every API call, so B2C and 570+ ONBP partner sites run on one codebase',
             },
           },
           {
-            category: 'nextgen',
-            badge: badge.nextgen,
-            title: {
-              kr: '매출 직결 핵심 도메인 차세대 이관',
-              en: 'Revenue-Critical Domain Migration',
-            },
+            category: 'arch',
+            badge: badge.arch,
+            title: { kr: '패키지 경계와 의존 방향', en: 'Package boundaries' },
             description: {
-              kr: '호텔·검색·항공·예약·인증·프로모션·투어패스 등 매출 직결 플로우를 차세대 스택으로 이관·구조화',
-              en: 'Migrated revenue-critical flows (hotel, search, flight, booking, auth, promo, tourpass) into the next-gen stack',
+              kr: '앱은 얇게 두고 채널 패키지 → 공통 도메인 → API 계약·SDK·UI 순으로 의존 방향을 고정. 채널 간 직접 참조를 막고, 공용 코드는 <code>core</code>로만 올리도록 패키지별 AGENTS.md로 규칙화',
+              en: 'Thin apps; dependencies flow one way from channel packages to shared domain to API contracts, SDK, and UI. Cross-channel imports are banned and shared code goes only through <code>core</code>, written down as per-package AGENTS.md rules',
             },
           },
           {
-            category: 'ops',
-            badge: badge.ops,
-            title: {
-              kr: 'as-is B2C PC/MO 병행 운영',
-              en: 'Legacy B2C PC/MO Parallel Ops',
-            },
+            category: 'arch',
+            badge: badge.arch,
+            title: { kr: 'BFF와 데이터 계층', en: 'BFF and data layer' },
             description: {
-              kr: '차세대 전환 기간에도 as-is / to-be 병행 운영 — 빌드/파이프라인·장애 핫픽스·상품 리스트 캐싱 등 라이브 안정 유지',
-              en: 'Ran as-is / to-be in parallel during migration — build/pipeline hotfixes, product-list caching, and live stability',
+              kr: 'Hono BFF(<code>@b2c/server</code> · <code>@onbp/server</code>)에서 Zod·TypeBox로 응답을 검증하고, 화면은 FE Model / Mapper만 보게 해 외부 여행 API 변경이 UI까지 번지지 않도록 분리',
+              en: 'Hono BFFs (<code>@b2c/server</code>, <code>@onbp/server</code>) validate responses with Zod and TypeBox; screens only see FE models and mappers, so upstream travel API changes stop at the boundary',
+            },
+          },
+          {
+            category: 'refac',
+            badge: badge.refac,
+            title: { kr: '상태 관리 전환', en: 'State management migration' },
+            description: {
+              kr: 'RTK Query → TanStack Query, Redux → Zustand를 공통 패키지부터 점진 적용해 서비스 중단 없이 전환',
+              en: 'Moved RTK Query → TanStack Query and Redux → Zustand incrementally, shared packages first, with no downtime',
             },
           },
         ],
       },
       {
-        heading: {
-          kr: '멀티테넌트 & 모노레포 아키텍처',
-          en: 'Monorepo & Multi-tenant Architecture',
-        },
+        heading: { kr: '마이그레이션 · 릴리스', en: 'Migration and release' },
         tasks: [
           {
             category: 'arch',
             badge: badge.arch,
-            title: {
-              kr: '원소스 멀티 사이트 구조',
-              en: 'Single-source Multi-site Architecture',
-            },
+            title: { kr: 'Next.js 12 → 15', en: 'Next.js 12 → 15' },
             description: {
-              kr: '도메인별 init 시 사이트 컨텍스트 로드, API 헤더 주입으로 B2C·다수 BP/ONBP를 단일 코드베이스에서 운영',
-              en: 'Load site context at init and inject API headers so B2C and many BP/ONBP sites share one codebase',
-            },
-          },
-          {
-            category: 'arch',
-            badge: badge.arch,
-            title: {
-              kr: 'ONBP 모노레포 전환',
-              en: 'ONBP Monorepo Migration',
-            },
-            description: {
-              kr: 'web-b2c / web-onbp / core 패키지 분리, 사이트별 빌드·배포 파이프라인, yarn → pnpm 마이그레이션으로 파트너 사이트 구축 속도를 높임',
-              en: 'Split web-b2c / web-onbp / core, per-site build/deploy pipelines, and yarn→pnpm to speed partner site builds',
-            },
-          },
-          {
-            category: 'arch',
-            badge: badge.arch,
-            title: {
-              kr: 'Turborepo 기반 대규모 FE 모노레포',
-              en: 'Large-scale Turborepo FE Monorepo',
-            },
-            description: {
-              kr: '570여 개 BP/ONBP 프론트를 통합 관리하고 Docker pipeline에 turborepo/Next 캐시를 적용해 빌드 부담을 줄임',
-              en: 'Unified 570+ BP/ONBP frontends and cut build burden with turborepo/Next caches in Docker pipelines',
-            },
-          },
-          {
-            category: 'arch',
-            badge: badge.arch,
-            title: {
-              kr: 'Next.js 메이저 버전업 & React 19 대응',
-              en: 'Next.js Major Upgrade & React 19',
-            },
-            description: {
-              kr: 'Next.js 12(Pages) → 15 · React 19 · TypeScript 5로 스택을 상향하고 공통 패키지 마이그레이션을 점진 적용',
-              en: 'Upgraded Next.js 12 (Pages) → 15, React 19, and TypeScript 5, migrating shared packages progressively',
+              kr: 'Pages Router 기반 Next 12를 15 · React 19 · TypeScript 5로 상향. 공통 패키지 호환성을 먼저 맞춘 뒤 채널 앱에 반영',
+              en: 'Upgraded Pages Router Next 12 to 15 with React 19 and TypeScript 5, fixing shared packages first and then rolling out to channel apps',
             },
           },
           {
             category: 'ui',
             badge: badge.ui,
-            title: {
-              kr: 'Ant Design v4 → v5 · Less 제거',
-              en: 'Ant Design v4 → v5 · Drop Less',
-            },
+            title: { kr: 'Ant Design 4 → 5', en: 'Ant Design 4 → 5' },
             description: {
-              kr: 'antd v4 + next-plugin-antd-less 의존을 제거하고 v5 CSS-in-JS·Design Token 체계로 전환해 빌드 마찰을 줄임',
-              en: 'Removed antd v4 + next-plugin-antd-less and moved to v5 CSS-in-JS / Design Tokens to cut build friction',
-            },
-          },
-          {
-            category: 'arch',
-            badge: badge.arch,
-            title: {
-              kr: 'Hono BFF · API 스키마 파이프라인',
-              en: 'Hono BFF · API Schema Pipeline',
-            },
-            description: {
-              kr: '@b2c/server · @onbp/server(Hono) BFF와 Zod/TypeBox 기반 스키마 검증·타입 추출 파이프라인을 구축',
-              en: 'Built Hono BFFs (@b2c/server · @onbp/server) with Zod/TypeBox schema validation and type-generation pipelines',
-            },
-          },
-        ],
-      },
-      {
-        heading: {
-          kr: '코드베이스 모듈화 & 리팩토링',
-          en: 'Codebase Quality & Refactoring',
-        },
-        tasks: [
-          {
-            category: 'refac',
-            badge: badge.refac,
-            title: {
-              kr: 'FSD·도메인 레이어 정리',
-              en: 'FSD & Domain Layer Cleanup',
-            },
-            description: {
-              kr: 'Feature-Sliced Design 도입, 패키지 카드·공통 컴포넌트 구조 재편, 사이드이펙트·가독성 문제 해소',
-              en: 'Adopted Feature-Sliced Design, restructured package cards/shared components, and reduced side effects',
-            },
-          },
-          {
-            category: 'refac',
-            badge: badge.refac,
-            title: {
-              kr: 'FE Model / Mapper · 데이터 레이어 전환',
-              en: 'FE Model / Mapper · Data-layer Shift',
-            },
-            description: {
-              kr: 'Triphub 직접 호출 → BE(b2cClient) 경유, 도메인 타입·매퍼 분리로 API 변경 영향도를 줄임',
-              en: 'Moved Triphub calls behind BE (b2cClient) and split domain types/mappers to isolate API churn',
-            },
-          },
-          {
-            category: 'refac',
-            badge: badge.refac,
-            title: {
-              kr: '상태관리 점진 전환',
-              en: 'State Management Migration',
-            },
-            description: {
-              kr: 'RTK Query → TanStack Query, Redux → Zustand를 서비스 무중단으로 병행 전환 (core 우선, 앱 잔존 Redux 공존)',
-              en: 'Migrated RTK Query→TanStack Query and Redux→Zustand without downtime (core-first, residual Redux coexistence)',
-            },
-          },
-          {
-            category: 'refac',
-            badge: badge.refac,
-            title: {
-              kr: 'L0 CoreProvider & 공통 컨텍스트',
-              en: 'L0 CoreProvider & Shared Context',
-            },
-            description: {
-              kr: 'withCoreProvider HOC로 앱 공통 초기화 계층을 표준화하고 패키지 간 컨텍스트 의존을 정리',
-              en: 'Standardized app bootstrap via withCoreProvider HOC and cleaned cross-package context dependencies',
-            },
-          },
-        ],
-      },
-      {
-        heading: {
-          kr: 'UI 시스템 · DX · 인프라',
-          en: 'UI System · DX · Infra',
-        },
-        tasks: [
-          {
-            category: 'ui',
-            badge: badge.ui,
-            title: {
-              kr: '모두투어 UI 라이브러리 · playground',
-              en: 'Modetour UI Library · Playground',
-            },
-            description: {
-              kr: 'antd 의존 축소, @repo/tokens·theme·playground(스캔 자동화·Monaco)로 컴포넌트 검증 환경을 구축',
-              en: 'Reduced antd coupling and built component verification with @repo/tokens, theme, and playground (scan automation + Monaco)',
+              kr: 'Less 빌드 체인을 걷어내고 v5 Design Token으로 테마를 옮김. 토큰·테마 패키지와 컴포넌트 playground로 UI 검증 환경 구축',
+              en: 'Removed the Less build chain and moved theming to v5 design tokens, with token/theme packages and a component playground for UI checks',
             },
           },
           {
             category: 'infra',
             badge: badge.infra,
-            title: {
-              kr: 'proxy-tool · 환경 프로필 DX',
-              en: 'proxy-tool · Env Profile DX',
-            },
+            title: { kr: '빌드 · 배포 파이프라인', en: 'Build and release pipeline' },
             description: {
-              kr: 'Dev/Stage/Prod 및 항공·호텔·제휴 샌드박스 엔드포인트를 프로필로 전환하는 proxy-tool을 구축',
-              en: 'Built proxy-tool to switch Dev/Stage/Prod and airline/hotel/partner sandbox endpoints via profiles',
+              kr: 'Azure Pipelines에 Turborepo·Next 빌드 캐시를 적용하고 Build/Deploy 분리, 배포 대기 큐를 도입. eslint → Biome, husky 훅으로 로컬 품질 기준 통일',
+              en: 'Added Turborepo and Next build caches to Azure Pipelines, split Build/Deploy, and introduced a deploy queue; unified local checks with Biome (from eslint) and husky hooks',
+            },
+          },
+        ],
+      },
+      {
+        heading: { kr: '도메인 · 팀', en: 'Domains and team' },
+        tasks: [
+          {
+            category: 'nextgen',
+            badge: badge.nextgen,
+            title: { kr: '핵심 도메인 이관', en: 'Core domain migration' },
+            description: {
+              kr: '호텔·항공·검색·예약·인증·프로모션 등 매출에 직결되는 흐름을 신규 구조로 옮기면서 as-is PC/MO는 병행 운영(장애 대응, 상품 목록 캐싱)',
+              en: 'Moved revenue-critical flows (hotel, flight, search, booking, auth, promotions) to the new structure while keeping the legacy PC/MO site running (incident fixes, product-list caching)',
             },
           },
           {
-            category: 'ui',
-            badge: badge.ui,
-            title: {
-              kr: '인쇄·날짜·공통 UX 컴포넌트 교체',
-              en: 'Print, Date & Shared UX Component Replacements',
-            },
+            category: 'ops',
+            badge: lead,
+            title: { kr: 'FE 팀 리드', en: 'Leading the FE team' },
             description: {
-              kr: 'react-print 제거·iframe 인쇄, react-day-picker 전환, Collapse/RangePicker 등 공통 컴포넌트 안정화',
-              en: 'Replaced react-print with iframe printing, migrated to react-day-picker, and stabilized Collapse/RangePicker shared components',
-            },
-          },
-          {
-            category: 'infra',
-            badge: { ...badge.infra, kr: '인프라·품질', en: 'Infra · Quality' },
-            title: {
-              kr: 'Azure DevOps · Docker · husky 파이프라인',
-              en: 'Azure DevOps · Docker · husky Pipelines',
-            },
-            description: {
-              kr: 'STG/PROD 환경변수, onbp/b2c deploy 연결, husky pre-commit/post-merge, 빌드 큐·캐시 운영 · Biome·Vitest 품질 기반 정리',
-              en: 'Operated STG/PROD env, onbp/b2c deploy, husky hooks, build cache · settled Biome and Vitest quality baselines',
+              kr: '6명 팀의 작업 분배·코드 리뷰·머지 기준 운영. Cursor·Claude Code·Gemini CLI용 공통 에이전트 가이드로 작업 방식과 온보딩을 문서화',
+              en: 'Task split, code review, and merge standards for a team of 6; documented shared workflow and onboarding as agent guides for Cursor, Claude Code, and Gemini CLI',
             },
           },
           {
             category: 'infra',
-            badge: { ...badge.infra, kr: '인프라·품질', en: 'Infra · Quality' },
-            title: {
-              kr: 'FE 컨벤션 · Agent 가이드',
-              en: 'FE Conventions · Agent Guides',
-            },
+            badge: badge.infra,
+            title: { kr: '로컬 환경 전환 도구', en: 'Local environment switcher' },
             description: {
-              kr: 'Cursor Agent 규칙과 Claude Code·Gemini CLI 가이드를 도입해 팀 공통 작업 방식·온보딩을 문서화',
-              en: 'Introduced Cursor Agent rules and Claude/Gemini guides to document shared workflow and onboarding',
+              kr: 'Dev/Stage/Prod와 항공·호텔·제휴 샌드박스 엔드포인트를 프로필로 바꿔 끼우는 로컬 proxy-tool 제작',
+              en: 'Built a local proxy tool that swaps Dev/Stage/Prod and airline, hotel, and partner sandbox endpoints by profile',
             },
           },
         ],
       },
     ],
     tech: [
-      'Next.js',
+      'Next.js 15',
+      'React 19',
       'TypeScript',
-      'Turborepo',
       'pnpm',
+      'Turborepo',
       'Hono',
       'Zod',
-      'FSD',
       'TanStack Query',
       'Zustand',
-      'React 19',
-      'Ant Design',
+      'Ant Design 5',
       'Biome',
       'Vitest',
-      'Azure DevOps',
-      'Git',
+      'Azure Pipelines',
     ],
     links: [
       { label: 'Modetour.com ↗', href: 'https://www.modetour.com' },
@@ -325,117 +184,57 @@ export const companies: Company[] = [
     },
     impacts: [
       {
-        kr: 'Windows C/S 자금관리 클라이언트를 React 웹 어드민으로 전면 재설계·구축',
-        en: 'Fully re-architected a Windows C/S cash-management client into a React web admin',
+        kr: 'Windows 설치형 자금관리 클라이언트의 <strong>주요 화면 약 30개를 React 웹 어드민으로 전환</strong>하는 작업을 주도',
+        en: 'Led the move of <strong>about 30 core screens</strong> from a Windows desktop cash-management client to a React web admin',
       },
       {
-        kr: '금융결제원 CMS 출금이체와 연동된 출금·수납·원장 화면의 상태·검증·에러 플로우를 FE에서 담당',
-        en: 'Owned FE state, validation, and error flows for KFTC-linked withdrawal, collection, and ledger screens',
+        kr: '금융결제원 CMS 출금이체와 연동된 출금·수납·원장 화면의 상태 관리, 검증, 재처리 흐름을 FE에서 담당',
+        en: 'Owned state, validation, and retry flows on withdrawal, collection, and ledger screens wired to KFTC CMS direct debit',
       },
       {
-        kr: '회원·세금계산서(팝빌)·일괄수정 등 운영 핵심 워크플로우로 기업 고객 온보딩을 지원',
-        en: 'Supported enterprise onboarding with member, Popbill tax-invoice, and batch-edit operational workflows',
-      },
-      {
-        kr: '대용량 금융 그리드 가상화로 운영 화면 성능·메모리 부하를 안정화',
-        en: 'Stabilized ops-screen performance and memory load with financial grid virtualization',
+        kr: '대용량 금융 그리드에 가상화를 적용해 운영 화면의 스크롤 성능과 메모리 부하를 안정화',
+        en: 'Virtualized heavy financial grids to keep scrolling smooth and memory use stable',
       },
     ],
     tasks: [
       {
-        category: 'arch',
-        badge: badge.arch,
-        title: {
-          kr: 'C/S 설치형 클라이언트 → React 웹 전면 마이그레이션',
-          en: 'Full Legacy C/S → React Web Migration',
-        },
-        description: {
-          kr: '수년간 운영된 Windows 설치형 자금관리 클라이언트를 React 웹으로 재설계·구축 — 대형 어드민 화면 다수, 신규 기업 고객 온보딩에 기여',
-          en: 'Re-architected a long-running Windows C/S cash-management client into React web — many large admin screens; contributed to enterprise onboarding',
-        },
-      },
-      {
         category: 'nextgen',
         badge: badge.nextgen,
-        title: {
-          kr: '출금·수납 원장/내역 도메인',
-          en: 'Withdrawal & Collection Ledger Domains',
-        },
+        title: { kr: '출금 · 수납 · 원장', en: 'Withdrawals, collections, ledger' },
         description: {
-          kr: '기간별·회원별 출금/수납 내역, 청구·수납·미납 합산·세로 병합, 출금 보류 제외, 일괄 수정 모달까지 운영 핵심 화면 구현',
-          en: 'Implemented period/member withdrawal & collection views with aggregation, row merging, hold exclusion, and batch-edit modals',
-        },
-      },
-      {
-        category: 'nextgen',
-        badge: badge.nextgen,
-        title: {
-          kr: '회원 등록·관리',
-          en: 'Member Registration & Admin',
-        },
-        description: {
-          kr: '회원 등록/대기목록/정기출금일, 선택·일괄 수정, 증빙 파일, validation·이벤트 바인딩까지 회원 라이프사이클 UI 구축',
-          en: 'Built member lifecycle UI: registration, waitlist, recurring debit dates, batch edit, evidence files, and validation/event binding',
-        },
-      },
-      {
-        category: 'nextgen',
-        badge: badge.nextgen,
-        title: {
-          kr: '세금계산서(팝빌) · 과금 증빙 워크플로우',
-          en: 'Tax Invoice (Popbill) & Billing Evidence',
-        },
-        description: {
-          kr: '세금계산서 일괄 수정·자동발급·자동저장, 팝빌 인증서 조회, 품목 설정 일괄 변경, 내보내기/암호화 대응',
-          en: 'Delivered tax-invoice batch edit, auto-issue/save, Popbill certificate lookup, item settings, and export/encryption flows',
+          kr: '기간별·회원별 출금/수납 내역, 청구·수납·미납 합산, 출금 보류 제외, 일괄 수정 등 운영 핵심 화면 구현',
+          en: 'Period and member views for withdrawals and collections, with billed/collected/unpaid totals, hold exclusion, and batch edits',
         },
       },
       {
         category: 'infra',
         badge: badge.infra,
-        title: {
-          kr: 'KFTC 연동 FE 범위',
-          en: 'KFTC Integration — FE Scope',
-        },
+        title: { kr: '금융결제원 연동 화면', en: 'KFTC integration screens' },
         description: {
-          kr: '출금·수납·원장·송수신 내역 화면에서 연동 상태 표시, 재처리·예외 UX, 운영자 확인 플로우를 구현',
-          en: 'Implemented integration status, retry/exception UX, and operator confirmation flows on withdrawal, collection, ledger, and tx-history screens',
+          kr: '연동 상태 표시, 재처리·예외 처리, 운영자 확인 흐름 구현',
+          en: 'Integration status, retry and exception handling, and operator confirmation flows',
         },
       },
       {
-        category: 'ui',
-        badge: badge.ui,
-        title: {
-          kr: '어드민 UX · 인라인 필터 · 송수신 그리드',
-          en: 'Admin UX, Inline Filters & Tx Grids',
-        },
+        category: 'nextgen',
+        badge: badge.nextgen,
+        title: { kr: '회원 · 세금계산서', en: 'Members and tax invoices' },
         description: {
-          kr: '인라인 필터·검색 옵션, 사이드 탭/레이아웃, 송수신 Record 그리드 전환으로 운영자 클릭 뎁스를 줄임',
-          en: 'Shortened operator click-depth with inline filters, search options, side-tab layout, and send/receive Record grids',
+          kr: '회원 등록·정기출금일·일괄 수정, 팝빌 세금계산서 일괄 수정·자동 발급 워크플로우 구현',
+          en: 'Member registration, recurring debit dates, batch edits, and Popbill tax-invoice batch edit and auto-issue',
         },
       },
       {
         category: 'refac',
         badge: badge.refac,
-        title: {
-          kr: '대용량 금융 그리드 가상화',
-          en: 'Large Financial Grid Virtualization',
-        },
+        title: { kr: '금융 그리드 가상화', en: 'Grid virtualization' },
         description: {
-          kr: '자금 관리 테이블에 Virtualization을 적용해 브라우저 메모리 부하를 낮추고 스크롤 성능을 안정화',
-          en: 'Applied virtualization to heavy financial tables to cut memory pressure and stabilize scroll performance',
+          kr: '대용량 자금 관리 테이블에 가상화를 적용해 브라우저 메모리 부하를 낮춤',
+          en: 'Virtualized large cash-management tables to cut browser memory pressure',
         },
       },
     ],
-    tech: [
-      'React',
-      'TypeScript',
-      'Zustand',
-      'TanStack Query',
-      'Tailwind CSS',
-      'KFTC CMS Direct Debit',
-      'Git',
-    ],
+    tech: ['React', 'TypeScript', 'Zustand', 'TanStack Query', 'Tailwind CSS', 'KFTC CMS'],
   },
 
   {
@@ -444,135 +243,61 @@ export const companies: Company[] = [
     badge: { kr: 'Frontend Developer', en: 'Frontend Developer' },
     date: '2022.04 – 2023.12',
     subtitle: {
-      kr: 'Creator Commerce Platform & Admin Ecosystem',
-      en: 'Creator Commerce Platform & Admin Ecosystem',
+      kr: '크리에이터 커머스 플랫폼 · 어드민 · Studio',
+      en: 'Creator commerce platform, admin, and Studio',
     },
     impacts: [
       {
-        kr: 'CRA 한계를 판단해 메인·어드민을 Next.js 모노레포로 전환하고 SSR/SSG 기반을 마련',
-        en: 'Migrated main & admin from CRA to a Next.js monorepo and established SSR/SSG foundations',
+        kr: 'SSR이 불가능한 CRA 앱 3개(커머스·어드민·Studio)를 <strong>Next.js 모노레포로 전환</strong>하고 SSR/SSG 적용',
+        en: '<strong>Moved 3 CRA apps</strong> (commerce, admin, Studio) <strong>to a Next.js monorepo</strong> with SSR/SSG',
       },
       {
-        kr: 'Next.js BFF + Prisma 타입 공유로 FE가 Feature를 끝까지 소유하는 구조로 전환',
-        en: 'Enabled end-to-end FE feature ownership via Next.js BFF + shared Prisma types',
+        kr: 'Next.js API Routes를 BFF로 두고 Prisma 타입을 모노레포 전체에 공유해, BE 대기 없이 FE가 기능을 끝까지 소유',
+        en: 'Used Next.js API Routes as a BFF with Prisma types shared across the monorepo, so FE could own features end to end',
       },
       {
-        kr: '메인 CMS 콘텐츠 타입 시스템과 상품·태그·파트너스 등 커머스 어드민을 구축·운영',
-        en: 'Built and operated homepage CMS content types and commerce admin for products, tags, and partners',
-      },
-      {
-        kr: '엑셀 I/O·서버리스 암호화, 커뮤니티 무한 스크롤 등 운영·성장 기능을 직접 구현·출시',
-        en: 'Implemented and shipped ops/growth features including Excel I/O with serverless encryption and community infinite scroll',
+        kr: '메인 CMS 콘텐츠 타입, 커머스 어드민, 엑셀 입출력과 서버리스 암호화 다운로드를 직접 구현·운영',
+        en: 'Built and ran the homepage CMS content types, commerce admin, Excel import/export, and serverless encrypted downloads',
       },
     ],
     tasks: [
       {
-        category: 'arch',
-        badge: badge.arch,
-        title: {
-          kr: 'CRA → Next.js 메인/어드민 모노레포 전환',
-          en: 'CRA → Next.js Main/Admin Monorepo Migration',
-        },
+        category: 'nextgen',
+        badge: badge.nextgen,
+        title: { kr: '메인 CMS 콘텐츠 타입', en: 'Homepage CMS content types' },
         description: {
-          kr: 'SSR 불가 CRA 한계를 판단해 shopfanpick-front·admin-next(Studio 포함) 등 커머스·어드민·Studio를 Next.js 모노레포로 전환',
-          en: 'Migrated commerce, admin, and Studio (shopfanpick-front · admin-next) from CRA to a Next.js monorepo',
-        },
-      },
-      {
-        category: 'arch',
-        badge: badge.arch,
-        title: {
-          kr: 'Next.js BFF & Prisma 타입 공유',
-          en: 'Next.js BFF & Prisma Type Sharing',
-        },
-        description: {
-          kr: 'API Routes BFF + Prisma 스키마/모델을 FE 전역에 공유해 BE 대기 없이 Feature를 끝까지 소유',
-          en: 'Shared Prisma models via Next.js BFF so FE owned features end-to-end without waiting on BE',
+          kr: '기본/특별 옵션을 분리한 콘텐츠 모델에 상품·크리에이터·게시물·배너·혼합 타입을 얹고 어드민 관리 화면 구축',
+          en: 'A content model with base and special options, extended to product, creator, post, banner, and mixed types, plus admin screens',
         },
       },
       {
         category: 'nextgen',
         badge: badge.nextgen,
-        title: {
-          kr: '메인 페이지 CMS · 콘텐츠 타입 시스템',
-          en: 'Homepage CMS · Content-Type System',
-        },
+        title: { kr: '커머스 어드민', en: 'Commerce admin' },
         description: {
-          kr: '콘텐츠 기본/특별 옵션 테이블 분리, 상품·크리에이터·게시물·배너·혼합 타입 확장과 어드민 콘텐츠 관리/상세 화면 구축',
-          en: 'Normalized base/special content options and extended product, creator, post, banner, hybrid types with admin list/detail screens',
-        },
-      },
-      {
-        category: 'nextgen',
-        badge: badge.nextgen,
-        title: {
-          kr: '커머스 어드민 도메인 풀스택 구축',
-          en: 'Full Commerce Admin Domain Build-out',
-        },
-        description: {
-          kr: '상품·태그·파트너스·쿠폰 바인딩·마일리지·회원 성별 라벨 등 백오피스 CRUD/검색/조회 옵션을 FE+BFF로 구현·운영',
-          en: 'Built and operated back-office CRUD/search for products, tags, partners, coupon binding, mileage, and member labels via FE+BFF',
+          kr: '상품·태그·파트너스·쿠폰·마일리지 등 백오피스 CRUD와 검색을 FE + BFF로 구현',
+          en: 'Back-office CRUD and search for products, tags, partners, coupons, and mileage, across FE and BFF',
         },
       },
       {
         category: 'infra',
         badge: badge.infra,
-        title: {
-          kr: '엑셀 다운로드/업로드 & 서버리스 암호화',
-          en: 'Excel Import/Export & Serverless Encryption',
-        },
+        title: { kr: '엑셀 입출력 · 암호화 다운로드', en: 'Excel I/O and encrypted export' },
         description: {
-          kr: '컬럼 매핑·중첩 JSON 재귀 처리 기반 엑셀 I/O와 Next 서버리스에서 동작하는 zip 암호화 다운로드 파이프라인 구현',
-          en: 'Implemented Excel I/O with column mapping / nested JSON recursion and zip-encrypted downloads for Next serverless',
-        },
-      },
-      {
-        category: 'ops',
-        badge: badge.ops,
-        title: {
-          kr: 'SEO · SSR/SSG · 커뮤니티 무한스크롤',
-          en: 'SEO · SSR/SSG · Community Infinite Scroll',
-        },
-        description: {
-          kr: 'SSR/SSG로 검색 수집·초기 로딩을 개선하고, 커뮤니티에 SWR Infinite 기반 페이지 캐시 무한스크롤을 적용',
-          en: 'Improved crawlability/initial load via SSR/SSG and shipped community infinite scroll with SWR Infinite page caching',
+          kr: '중첩 JSON을 재귀로 펼치는 엑셀 입출력과 Next 서버리스 환경에서 동작하는 zip 암호화 다운로드 구현',
+          en: 'Excel import/export that recursively flattens nested JSON, and zip-encrypted downloads that run on Next serverless',
         },
       },
       {
         category: 'ui',
         badge: badge.ui,
-        title: {
-          kr: '디자인 시스템 · Storybook · Tailwind',
-          en: 'Design System · Storybook · Tailwind',
-        },
+        title: { kr: 'SSR/SSG · UI 기반', en: 'SSR/SSG and UI foundation' },
         description: {
-          kr: 'Atomic Design·Storybook 도입 시도 후 Tailwind로 통합, 크리에이터 프로필/팔로우/푸터 반응형과 UI 컴포넌트 기반 정비',
-          en: 'Tried Atomic Design/Storybook then consolidated on Tailwind; stabilized creator profile/follow/footer responsive UI foundations',
-        },
-      },
-      {
-        category: 'arch',
-        badge: badge.arch,
-        title: {
-          kr: '파트너스·조회 옵션 API 구조 개편',
-          en: 'Partners & Query-option API Restructuring',
-        },
-        description: {
-          kr: '파트너스 리스트 컴포넌트/API 구조 변경, 검색 폼 토글·엑셀 다운로드 쿼리 연동 등 운영 도구 고도화',
-          en: 'Restructured partners list component/API and upgraded ops tooling (search-form toggles, excel download query wiring)',
+          kr: 'SSR/SSG로 검색 수집과 초기 로딩을 개선하고, SWR Infinite 무한 스크롤과 Tailwind 기반 컴포넌트로 UI 정비',
+          en: 'SSR/SSG for crawlability and first load; SWR Infinite scrolling and Tailwind-based components',
         },
       },
     ],
-    tech: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Prisma',
-      'Redux',
-      'Next BFF',
-      'Tailwind CSS',
-      'SWR',
-      'Git',
-    ],
+    tech: ['Next.js', 'React', 'TypeScript', 'Prisma', 'Redux', 'SWR', 'Tailwind CSS'],
   },
 ]
