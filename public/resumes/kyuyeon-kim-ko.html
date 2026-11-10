@@ -349,6 +349,16 @@
     }
     .arr { color: var(--accent); font-weight: 700; }
 
+    /* ── 경력 하위 묶음 ── */
+    .job-sub {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: .04em;
+      margin: 9px 0 4px;
+    }
+    .job-sub:first-of-type { margin-top: 2px; }
+
     /* ── 프로젝트 ── */
     .proj {
       margin-bottom: 14px;
@@ -474,11 +484,12 @@
         <div class="name">김규연</div>
         <div class="role-line">
           <span class="role">파트너 사이트 570여 개를 원소스 멀티테넌트로 운영하는 프론트엔드 PL</span>
-          <span class="career-years">총 경력 4년 7개월 (2022.04 ~)</span>
+          <span class="career-years">총 경력 4년+ (2022.04 ~)</span>
         </div>
       </div>
       <div class="contact">
-        <span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>010-2300-6059</span>
+        <!-- 전화번호는 공개 웹에 두지 않습니다. 제출용 PDF를 만들 때만 아래 줄을 되살리세요. -->
+        <!-- <span class="contact-item">010-0000-0000</span> -->
         <span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:lurain003@gmail.com">lurain003@gmail.com</a></span>
         <span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><a href="https://github.com/GrangbelrLurain" target="_blank">github.com/GrangbelrLurain</a></span>
         <span class="contact-item"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><a href="https://grangbelrlurain.github.io/" target="_blank">grangbelrlurain.github.io</a></span>
@@ -493,9 +504,9 @@
     <section>
       <h2>소개</h2>
       <p class="summary">
-        샵팬픽에서 크리에이터 커머스 프론트엔드로 시작했고, 지에스아이코에서 Windows 설치형 금융 어드민을 React 웹으로 옮겼습니다.
-        현재는 와이리즘 소속으로 모두투어 차세대 웹의 FE PL을 맡아, B2C와 파트너 사이트 570여 개를 하나의 Next.js 모노레포에서 개발하고 있습니다.
-        팀 리드로서 CI 테스트 하네스를 설계했습니다.
+        레거시 단일 B2C 앱을 인수해, B2C·BP·ONBP 3채널과 파트너 사이트 570여 개를 <strong>한 저장소에서 빌드·배포하는 Next.js 멀티테넌트 모노레포</strong>로 전환한 프론트엔드 PL입니다.
+        기존 서비스를 운영하면서 Next.js 12 → 15까지 올렸고, 구조가 지켜지도록 CI 머지 기준과 패키지 경계 규칙을 함께 남깁니다.
+        이전에는 크리에이터 커머스와 B2B 자금관리 웹에서 앱 구조 전환(CRA → Next.js, Windows 설치형 → React 웹)을 맡았습니다.
       </p>
     </section>
 
@@ -511,28 +522,29 @@
         </div>
         <span class="skill-label">Frontend</span>
         <div class="skill-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">React</span>
+          <span class="tag">Next.js 12–15</span>
+          <span class="tag">React 19</span>
           <span class="tag">TanStack Query</span>
           <span class="tag">Zustand</span>
           <span class="tag">Redux</span>
+          <span class="tag">Ant Design 5</span>
           <span class="tag">Tailwind CSS</span>
-          <span class="tag">PWA</span>
           <span class="tag">Vitest</span>
         </div>
         <span class="skill-label">Arch</span>
         <div class="skill-tags">
-          <span class="tag">Turborepo</span>
           <span class="tag">pnpm workspaces</span>
+          <span class="tag">Turborepo</span>
           <span class="tag">Multi-tenant Monorepo</span>
+          <span class="tag">Hono BFF</span>
+          <span class="tag">Zod</span>
         </div>
         <span class="skill-label">Systems</span>
         <div class="skill-tags">
+          <span class="tag">Azure Pipelines</span>
+          <span class="tag">Docker</span>
           <span class="tag">Tauri 2</span>
-          <span class="tag">MITM Proxy</span>
-          <span class="tag">API Mocking</span>
           <span class="tag">Prisma</span>
-          <span class="tag">Azure DevOps</span>
           <span class="tag">Git</span>
         </div>
       </div>
@@ -550,14 +562,31 @@
           </div>
           <span class="job-dates">2024.11 – 현재 (재직중)</span>
         </div>
-        <p class="job-meta">모두투어 차세대 웹 파견. B2C / Best Partner / Online Best Partner. 커밋 1,490, 머지 PR 669</p>
+        <p class="job-meta">모두투어 차세대 웹 플랫폼 파견 · B2C / Best Partner / Online Best Partner (PC·MO)</p>
+
+        <p class="job-sub">플랫폼 구조</p>
         <ul class="bullets">
-          <li>B2C 단일 앱을 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> 패키지로 분리</li>
-          <li>Online Best Partner 파트너 사이트 570여 개를 원소스로 운영</li>
-          <li>Hono BFF(<code>@b2c/server</code>, <code>@onbp/server</code>)와 Zod로 FE Model / Mapper 계층 구축</li>
-          <li>Next.js 12에서 15, React 19, Ant Design 4에서 5로 업그레이드하고 Less 제거</li>
-          <li>CI 테스트 하네스를 설계해 타입·패키지 참조·주요 기능 테스트를 통과한 변경만 머지</li>
-          <li>ISMS 기준에 맞춰 암복호·개인정보 처리를 클라이언트 밖으로 이동</li>
+          <li>레거시 단일 B2C 앱을 <code>core</code> / <code>web-b2c</code> / <code>web-onbp</code> 워크스페이스로 재편해, <strong>B2C·BP·ONBP 3채널 × PC·MO를 한 저장소에서 빌드·배포</strong></li>
+          <li>접속 도메인으로 사이트 설정을 주입하는 원소스 멀티테넌트 구조로 <strong>ONBP 파트너 사이트 570여 개</strong>를 하나의 코드베이스로 운영</li>
+          <li>Hono BFF(<code>@b2c/server</code>, <code>@onbp/server</code>)에서 Zod·TypeBox로 응답을 검증하고 FE Model / Mapper를 분리해 외부 API 변경을 화면과 격리</li>
+        </ul>
+
+        <p class="job-sub">마이그레이션 · 릴리스</p>
+        <ul class="bullets">
+          <li>pnpm 전환(2025.11) <span class="arr">→</span> Turborepo·빌드 캐시(2026.01) <span class="arr">→</span> <strong>Next.js 12 → 15 · React 19 · Ant Design 5, Less 제거</strong>(2026.06)를 as-is 서비스 병행 운영 중에 단계적으로 진행</li>
+          <li>타입·패키지 참조·주요 기능 테스트를 통과해야만 머지되는 <strong>CI 게이트</strong>를 설계하고, Azure Pipelines를 Build/Deploy로 분리하고 배포 대기 큐 도입</li>
+        </ul>
+
+        <p class="job-sub">보안 · 도메인</p>
+        <ul class="bullets">
+          <li>ISMS 대응으로 <strong>클라이언트 암복호를 제거하고 개인정보 처리를 BFF로 이전</strong></li>
+          <li>호텔·항공·검색·예약·인증·프로모션 등 매출 직결 흐름을 신규 구조로 이관</li>
+        </ul>
+
+        <p class="job-sub">팀 리드</p>
+        <ul class="bullets">
+          <li>FE 6명의 작업 분배·코드 리뷰·머지 기준 운영. 패키지별 AGENTS.md와 Cursor·Claude Code 공통 가이드로 패키지 경계 규칙과 온보딩을 문서화</li>
+          <li>Dev/Stage/Prod와 항공·호텔·제휴 샌드박스 엔드포인트를 프로필로 전환하는 로컬 proxy-tool 제작</li>
         </ul>
       </div>
 
@@ -591,10 +620,10 @@
         </div>
         <p class="job-meta">YesCMS B2B 자금관리 웹 · 금융결제원 CMS 출금이체 연계</p>
         <ul class="bullets">
-          <li>Windows C/S 설치형 클라이언트를 React 웹 어드민으로 전환</li>
-          <li>주요 화면 약 30개 마이그레이션 주도</li>
-          <li>금융결제원 CMS 출금이체와 연동된 출금·수납·원장 화면의 상태 관리, 검증, 재시도 처리를 FE에서 담당</li>
-          <li>고밀도 금융 그리드 테이블에 가상화 적용</li>
+          <li>Windows 설치형 자금관리 클라이언트의 <strong>주요 화면 약 30개를 React 웹 어드민으로 전환</strong>하는 작업을 주도</li>
+          <li>금융결제원 CMS 출금이체와 연동된 출금·수납·원장 화면의 상태 관리, 검증, 재처리 흐름을 FE에서 담당</li>
+          <li>회원 등록·정기출금일·일괄 수정, 팝빌 세금계산서 일괄 수정·자동 발급 워크플로우 구현</li>
+          <li>대용량 금융 그리드에 가상화를 적용해 운영 화면의 스크롤 성능과 메모리 부하를 안정화</li>
         </ul>
       </div>
 
@@ -606,11 +635,49 @@
           </div>
           <span class="job-dates">2022.04 – 2023.12 (1년 9개월)</span>
         </div>
-        <p class="job-meta">크리에이터 커머스 플랫폼</p>
+        <p class="job-meta">크리에이터 커머스 플랫폼 · 어드민 · Studio</p>
         <ul class="bullets">
-          <li>커머스·어드민·Studio CRA 앱 3개를 Next.js 모노레포로 전환하고 SSR/SSG 적용</li>
-          <li>Next.js API Routes를 BFF로 두고 Prisma 타입을 모노레포 전반에 공유</li>
-          <li>CMS 콘텐츠 타입, 재귀 구조 Excel 입출력, 서버리스 zip 암호화 다운로드 구현</li>
+          <li>SSR이 불가능한 CRA 앱 3개(커머스·어드민·Studio)를 <strong>Next.js 모노레포로 전환</strong>하고 SSR/SSG 적용</li>
+          <li>Next.js API Routes를 BFF로 두고 Prisma 타입을 모노레포 전체에 공유해, BE 대기 없이 FE가 기능을 끝까지 소유</li>
+          <li>메인 CMS 콘텐츠 타입(상품·크리에이터·게시물·배너·혼합)과 커머스 어드민(상품·태그·파트너스·쿠폰) 구축</li>
+          <li>중첩 JSON을 재귀로 펼치는 엑셀 입출력과 Next 서버리스에서 동작하는 zip 암호화 다운로드 구현</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>개인 프로젝트</h2>
+
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-title-row">
+            <span class="proj-name">horizon-gateway</span>
+            <span class="proj-links">
+              <a href="https://gateway.delete-horizon.com" target="_blank">Site</a>
+              <a href="https://github.com/delete-horizon/horizon-gateway" target="_blank">GitHub</a>
+            </span>
+          </div>
+          <span class="proj-tech">Rust · Tauri 2 · React 19 · SQLite · Supabase</span>
+        </div>
+        <ul class="bullets">
+          <li>HTTPS 디버그 프록시, API 모킹, 도메인 헬스체크, 모바일 터널링을 <strong>데스크톱 앱 하나로 묶은 로컬 개발 도구</strong> (Windows / macOS / Linux 배포)</li>
+          <li>Cursor·Claude Code 같은 AI 에이전트가 트래픽을 조회하고 Mock을 설정할 수 있는 CLI(<code>hgc</code>)와 Agent Skill 제공</li>
+          <li>Supabase Realtime으로 팀 단위 도메인·Mock 규칙을 동기화하고 SQLite FTS5로 트래픽 검색</li>
+        </ul>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head">
+          <div class="proj-title-row">
+            <span class="proj-name">horizon-mesh <span class="proj-tech">(실험)</span></span>
+            <span class="proj-links">
+              <a href="https://travel.delete-horizon.com/" target="_blank">Travel</a>
+            </span>
+          </div>
+          <span class="proj-tech">Turborepo · React · PWA · Cloudflare Pages</span>
+        </div>
+        <ul class="bullets">
+          <li>서로 다른 도메인에 따로 배포한 PWA(<code>travel</code>, <code>hotel</code>, <code>auth</code>)를 공통 embed 프로토콜로 연결하고, IndexedDB 기반으로 오프라인에서도 동작하게 한 실험</li>
         </ul>
       </div>
     </section>

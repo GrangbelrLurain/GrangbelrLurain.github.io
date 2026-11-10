@@ -59,58 +59,58 @@ export const profile = {
     },
   ],
   metaDescription: {
-    kr: '프론트엔드 리드 · FE PL 김규연 포트폴리오. 모두투어 차세대 웹 FE PL, pnpm/Turborepo 멀티테넌트 모노레포, Rust/Tauri 2 DX, PWA 메쉬.',
-    en: 'Portfolio of Kyuyeon Kim, Frontend Lead running 570+ partner sites from one Next.js codebase. pnpm/Turborepo multi-tenant monorepo, Rust/Tauri 2 DX, PWA mesh.',
+    kr: '프론트엔드 리드 · FE PL 김규연 포트폴리오. 모두투어 차세대 웹에서 B2C·BP·ONBP 3채널과 파트너 사이트 570여 개를 한 저장소로 운영하는 Next.js 멀티테넌트 모노레포를 리딩합니다.',
+    en: 'Portfolio of Kyuyeon Kim, Frontend Lead at Modetour next-gen web: one Next.js multi-tenant monorepo for 3 channels and 570+ partner sites.',
   },
 }
 
 export const metrics: Metric[] = [
   {
-    value: '12→15',
-    label: {
-      kr: 'Next.js 메이저 상향 주도',
-      en: 'Next.js Major Upgrade Led',
-    },
-  },
-  {
     value: '570+',
     label: {
-      kr: '멀티테넌트 파트너(ONBP) 사이트',
-      en: 'Multi-tenant Partner (ONBP) Sites',
+      kr: '원소스로 운영하는 ONBP 파트너 사이트',
+      en: 'ONBP partner sites on one codebase',
     },
   },
   {
-    value: '3',
+    value: '3 × 2',
     label: {
-      kr: '테넌트 표면 · b2c / onbp / core',
-      en: 'Tenant surfaces · b2c / onbp / core',
+      kr: 'B2C·BP·ONBP × PC·MO, 한 저장소에서 빌드·배포',
+      en: 'B2C, BP, ONBP × PC/MO, built and shipped from one repo',
     },
   },
   {
-    value: '3 Domains',
+    value: '12→15',
     label: {
-      kr: '커머스 → 금융 → 여행 플랫폼',
-      en: 'Commerce → Fintech → Travel Platform',
+      kr: 'Next.js 메이저 업그레이드 (React 19 · Ant Design 5 동반)',
+      en: 'Next.js major upgrade (with React 19 and Ant Design 5)',
+    },
+  },
+  {
+    value: '6명',
+    label: {
+      kr: 'FE 팀 리드 (FE PL)',
+      en: 'FE team led as Frontend Lead',
     },
   },
 ]
 
 export const aboutParagraphs: LocaleText[] = [
   {
-    kr: `안녕하세요. 경력 ${CAREER_KR} 차 <strong>프론트엔드 리드 · FE PL 김규연</strong>입니다.`,
-    en: 'I am <strong>Kyuyeon Kim</strong>, a <strong>Frontend Lead with 4+ years of experience</strong> based in South Korea.',
+    kr: `안녕하세요. 경력 ${CAREER_KR} 차 <strong>프론트엔드 리드 김규연</strong>입니다.`,
+    en: 'I am <strong>Kyuyeon Kim</strong>, a <strong>Frontend Lead</strong> with 4+ years of experience, based in South Korea.',
   },
   {
-    kr: '크리에이터 커머스(샵팬픽)로 시작해 B2B 자금관리(지에스아이코 · 금융결제원 CMS 출금이체)를 거쳐, 현재는 <strong>와이리즘에서 모두투어 차세대 웹 FE PL</strong>(팀 6명)로서 B2C 및 570여 개 파트너 사이트(ONBP)를 아우르는 <strong>Next.js 멀티테넌트 모노레포</strong>를 설계·리딩합니다.',
-    en: 'Starting in creator commerce (ShopFanPick) and B2B cash management (GSIKO · KFTC), I now lead Modetour next-gen web as Frontend Lead at YRISM (team of 6), designing a <strong>Next.js multi-tenant monorepo</strong> for B2C and 570+ partner (ONBP) sites.',
+    kr: '지금은 와이리즘 소속으로 <strong>모두투어 차세대 웹의 FE PL</strong>(팀 6명)을 맡고 있습니다. 레거시 단일 B2C 앱을 인수해, B2C·BP·ONBP 3채널과 파트너 사이트 570여 개를 <strong>한 저장소에서 빌드·배포하는 Next.js 멀티테넌트 모노레포</strong>로 바꿨고, 기존 서비스를 운영하면서 Next.js 12 → 15까지 올렸습니다.',
+    en: 'I lead frontend for <strong>Modetour\'s next-gen web</strong> at YRISM (team of 6). I took over a legacy single B2C app and turned it into <strong>a Next.js multi-tenant monorepo</strong> where 3 channels and 570+ partner sites build and ship from one repo — and upgraded Next.js 12 → 15 while the legacy site stayed live.',
   },
   {
-    kr: '호텔·항공·검색·예약·인증·프로모션 등 핵심 도메인 차세대 개편을 리딩하고, <code>web-b2c</code>/<code>web-onbp</code>/<code>core</code> 패키지 경계, pnpm·Turborepo 빌드, React 19 공통 패키지, UI playground까지 <strong>기능 개발과 플랫폼 기반을 함께</strong> 책임집니다.',
-    en: 'I lead next-gen work across hotel, flight, search, booking, auth, and promotions — while also owning platform foundations: package boundaries (<code>web-b2c</code>/<code>web-onbp</code>/<code>core</code>), pnpm·Turborepo builds, React 19 shared packages, and the UI playground.',
+    kr: '구조를 먼저 잡고, 그 구조가 지켜지도록 <strong>CI 머지 기준과 문서로 규칙을 남기는 방식</strong>으로 일합니다. 이전에는 크리에이터 커머스(샵팬픽)에서 CRA → Next.js 모노레포 전환을, B2B 자금관리(지에스아이코)에서 Windows 설치형 클라이언트 → React 웹 전환을 맡았습니다.',
+    en: 'I set the structure first, then make it stick with <strong>CI merge gates and written rules</strong>. Before this I moved CRA apps to a Next.js monorepo at ShopFanPick (creator commerce) and a Windows desktop client to a React web admin at GSIKO (B2B cash management).',
   },
   {
-    kr: '사이드로는 <strong>horizon-gateway</strong>(Rust/Tauri 2 DX)와 <strong>horizon-mesh</strong>(PWA 메쉬)를 설계·운영합니다.',
-    en: 'On the side I design and run <strong>horizon-gateway</strong> (Rust/Tauri 2 DX) and <strong>horizon-mesh</strong> (PWA mesh).',
+    kr: '사이드로는 로컬 프록시·API 모킹을 한 앱으로 묶은 <strong>horizon-gateway</strong>(Rust/Tauri 2)를 만들고 있고, 독립 배포된 PWA를 잇는 <strong>horizon-mesh</strong>를 실험하고 있습니다.',
+    en: 'On the side I build <strong>horizon-gateway</strong> (Rust/Tauri 2), a desktop app that combines a local proxy and API mocking, and experiment with <strong>horizon-mesh</strong>, which links independently deployed PWAs.',
   },
 ]
 
@@ -150,8 +150,8 @@ export const projects: Project[] = [
     ],
     bullets: [
       {
-        kr: '<strong>Serverless Multi-Frontend App 메쉬</strong>: 서로 다른 독립 도메인에 배포된 PWA를 공통 embed protocol로 연동하는 정적 아키텍처',
-        en: '<strong>Serverless Micro-Frontend App Mesh</strong>: Connected independently-deployed PWAs across separate domains using a shared embed protocol',
+        kr: '<strong>실험 프로젝트</strong>: 서로 다른 도메인에 따로 배포한 PWA를 공통 embed 프로토콜로 연결해 보는 정적 아키텍처 실험',
+        en: '<strong>Experiment</strong>: linking PWAs deployed on separate domains through a shared embed protocol, fully static',
       },
       {
         kr: '<strong>모듈화 및 오프라인 지원</strong>: <code>travel</code>, <code>hotel</code>, <code>auth</code> 서비스 모듈화 및 IndexedDB 기반 Local-First 오프라인 작동 처리',
@@ -185,7 +185,7 @@ export const skillRows: SkillRow[] = [
       'Turborepo',
       'pnpm workspaces',
       'Multi-tenant Monorepo',
-      'Micro-Frontend Mesh',
+      'Hono BFF',
       'Next.js BFF',
       'FSD',
     ],
