@@ -483,7 +483,7 @@
       <div>
         <div class="name">김규연</div>
         <div class="role-line">
-          <span class="role">파트너 사이트 570여 개를 원소스 멀티테넌트로 운영하는 프론트엔드 PL</span>
+          <span class="role">운영 중인 서비스의 구조를 바꾸는<br />프론트엔드 PL</span>
           <span class="career-years">총 경력 4년+ (2022.04 ~)</span>
         </div>
       </div>
@@ -504,9 +504,8 @@
     <section>
       <h2>소개</h2>
       <p class="summary">
-        레거시 단일 B2C 앱을 인수해, B2C·BP·ONBP 3채널과 파트너 사이트 570여 개를 <strong>한 저장소에서 빌드·배포하는 Next.js 멀티테넌트 모노레포</strong>로 전환한 프론트엔드 PL입니다.
-        운영 중인 서비스에서 Next.js 12 → 15 전환을 직접 제안해 끝냈고, 그 과정에서 CI 빌드를 20분에서 6분으로, 메인 페이지 HTML을 약 5MB에서 50KB로 줄였습니다. 구조가 지켜지도록 검증 훅과 패키지 경계 규칙을 함께 남깁니다.
-        이전에는 크리에이터 커머스와 B2B 자금관리 웹에서 앱 구조 전환(CRA → Next.js, Windows 설치형 → React 웹)을 맡았습니다.
+        첫 회사에서 CRA 앱 3개를 Next.js 모노레포로 합쳤고, 두 번째 회사에서는 Windows 설치형 자금관리 클라이언트를 React 웹으로 옮겼습니다. 지금은 레거시 B2C 앱 하나를 인수해, <strong>3채널과 파트너 사이트 570여 개가 한 저장소에서 배포되는 멀티테넌트 모노레포</strong>로 바꿨습니다.
+        매번 운영 중인 서비스에서 단계적으로 옮기고, 끝난 뒤에도 구조가 지켜지도록 패키지 경계 규칙과 자동 검증을 함께 남깁니다.
       </p>
     </section>
 
@@ -522,19 +521,20 @@
           </div>
           <span class="job-dates">2024.11 – 현재 (재직중)</span>
         </div>
-        <p class="job-meta">모두투어 차세대 웹 플랫폼 파견 · B2C / Best Partner / Online Best Partner (PC·MO)</p>
+        <p class="job-meta">모두투어 차세대 웹 플랫폼 파견 · B2C / Best Partner(BP) / Online Best Partner(ONBP) · PC·MO</p>
 
         <p class="job-sub">플랫폼 구조</p>
         <ul class="bullets">
           <li>멀티 레포에서 같은 코드를 양방향으로 반영하던 병목을 없애려 <strong>모노레포 통합을 직접 제안·결정</strong>. 공통 로직을 <code>core</code>로 분리해 B2C·BP·ONBP 3채널 × PC·MO를 한 저장소에서 빌드·배포</li>
-          <li>접속 도메인으로 사이트 설정을 주입하는 원소스 멀티테넌트 구조로 <strong>ONBP 파트너 사이트 570여 개</strong>를 하나의 코드베이스로 운영 (1일 1회 정기 배포, 주 1회 수준 핫픽스)</li>
-          <li>Hono BFF(<code>@b2c/server</code>, <code>@onbp/server</code>)에서 Zod·TypeBox로 응답을 검증하고 FE Model / Mapper를 분리해 외부 API 변경을 화면과 격리</li>
+          <li>접속 도메인으로 사이트 설정을 주입하는 원소스 멀티테넌트 구조로 <strong>ONBP 파트너 사이트 570여 개</strong>를 하나의 코드베이스로 운영</li>
+          <li>외부 API 변경이 화면까지 번지지 않도록 Hono BFF에서 Zod·TypeBox로 응답을 검증하고 FE Model / Mapper를 분리</li>
         </ul>
 
         <p class="job-sub">마이그레이션 · 릴리스</p>
         <ul class="bullets">
-          <li>Next.js 12의 보안 지원 종료와 Pages Router의 한계를 근거로 전환 순서를 직접 제안·결정: pnpm(2025.11) <span class="arr">→</span> Turborepo(2026.01) <span class="arr">→</span> <strong>Next.js 12 → 15 · React 19 · Ant Design 5, Less 제거</strong>(2026.06)를 운영 중인 서비스에서 단계적으로 진행</li>
-          <li>서버 응답이 HTML에 함께 실리던 구조를 걷어내 <strong>메인 페이지 문서 크기를 약 5MB → 50KB</strong>로 축소(네트워크 전송 기준). 전환 이후 보안 패치는 patch 버전 업데이트만으로 적용</li>
+          <li>Next.js 12의 보안 지원 종료와 Pages Router의 한계를 근거로 <strong>Next.js 15 전환과 그 순서를 직접 제안·결정</strong>. 전환 이후 보안 패치는 patch 버전 업데이트만으로 적용</li>
+          <li>운영 중인 서비스에서 pnpm(2025.11) <span class="arr">→</span> Turborepo(2026.01) <span class="arr">→</span> <strong>Next.js 12 → 15 · React 19 · Ant Design 5, Less 제거</strong>(2026.06) 순으로 단계 전환</li>
+          <li>Pages Router SSR이 GNB 등 방대한 JSON 데이터를 HTML에 함께 실어 보내던 구조를 걷어내 <strong>메인 페이지 문서 크기를 약 5MB → 50KB</strong>로 축소(네트워크 전송 기준)</li>
           <li>Dockerfile의 불필요한 빌드 단계 정리, <code>turbo prune</code>으로 빌드 대상 분리, 내부 패키지 병렬 빌드로 <strong>CI 빌드 단계를 20분 → 6분</strong>으로 단축. 빌드 캐시는 I/O 병목으로 더 느려지는 것을 확인하고 제거</li>
           <li>ESLint·tsc 전체 검사(10분 이상)를 Biome·TypeScript 7.0 preview로 바꿔 <strong>3분</strong>으로 단축. 3채널 × PC·MO 파이프라인을 한 번에 실행하는 배치 파이프라인 추가</li>
         </ul>
@@ -542,13 +542,14 @@
         <p class="job-sub">보안 · 도메인</p>
         <ul class="bullets">
           <li>ISMS 대응으로 <strong>클라이언트 암복호를 제거하고 개인정보 처리를 BFF로 이전</strong></li>
-          <li>호텔·항공·검색·예약·인증·프로모션 등 매출 직결 흐름을 신규 구조로 이관. CMS로 주입하는 프로모션 HTML/CSS/JS가 타이밍에 따라 깨지던 문제를 로딩 순서를 보장하는 구조로 해결</li>
+          <li>호텔·항공·검색·예약·인증·프로모션 등 매출 직결 흐름을 새 모노레포로 이관</li>
+          <li>CMS로 주입하는 프로모션 HTML/CSS/JS가 로딩 타이밍에 따라 깨지던 문제를, 로딩 순서를 보장하도록 바꿔 해결</li>
         </ul>
 
         <p class="job-sub">팀 리드</p>
         <ul class="bullets">
           <li>FE 6명의 작업 분배·코드 리뷰·머지 기준 운영. 패키지별 AGENTS.md와 Cursor·Claude Code 공통 가이드로 패키지 경계 규칙을 문서화해, <strong>신규 인원이 3일 안에 첫 PR</strong></li>
-          <li>Dev/Stage/Prod와 항공·호텔·제휴 샌드박스 엔드포인트를 프로필로 전환하는 로컬 proxy-tool 제작</li>
+          <li>Dev/Stage/Prod와 항공·호텔·제휴 샌드박스 엔드포인트를 프로필로 전환하는 로컬 proxy-tool 제작. 이후 개인 프로젝트 horizon-gateway로 발전</li>
         </ul>
       </div>
 
@@ -582,10 +583,10 @@
         </div>
         <p class="job-meta">YesCMS B2B 자금관리 웹 · 금융결제원 CMS 출금이체 연계</p>
         <ul class="bullets">
-          <li><strong>FE 단독</strong>으로 Windows 설치형 자금관리 클라이언트의 <strong>주요 화면 약 30개를 React 웹 어드민으로 전환</strong>하고, 상태가 한 페이지에 몰려 있던 화면을 컴포넌트로 분리</li>
+          <li><strong>FE 단독</strong>으로 Windows 설치형 자금관리 클라이언트의 <strong>주요 화면 약 30개를 React 웹 어드민으로 전환</strong></li>
           <li>금융결제원 CMS 출금이체와 연동된 출금·수납·원장 화면의 상태 관리, 검증, 재처리 흐름을 FE에서 담당</li>
           <li>회원 등록·정기출금일·일괄 수정, 팝빌 세금계산서 일괄 수정·자동 발급 워크플로우 구현</li>
-          <li>50건만 넘어도 스크롤 시 리렌더로 버벅이던 금융 그리드에 가상화를 적용해 <strong>1,000건 이상</strong>에서도 원활히 동작</li>
+          <li>50건만 넘어도 스크롤 시 리렌더로 버벅이던 금융 그리드에 가상화를 적용해 <strong>1,000건 이상</strong>에서도 끊김 없이 스크롤</li>
         </ul>
       </div>
 
@@ -599,8 +600,8 @@
         </div>
         <p class="job-meta">크리에이터 커머스 플랫폼 · 어드민 · Studio</p>
         <ul class="bullets">
-          <li>CTO 제안을 팀과 논의해 CRA 앱 3개를 <strong>Next.js 모노레포로 전환</strong>해 엔지니어 한 명이 DB부터 화면까지 담당</li>
-          <li>Next.js API Routes를 BFF로 두고 Prisma 타입을 모노레포 전체에 공유해 FE·BE 간 대기 병목 제거</li>
+          <li>CTO가 제안한 전환을 팀과 논의해 CRA 앱 3개를 <strong>Next.js 모노레포로 통합</strong>. 이후 엔지니어 한 명이 한 기능을 DB부터 화면까지 맡는 방식으로 작업</li>
+          <li>Next.js API Routes를 BFF로 두고 Prisma 타입을 모노레포 전체에 공유해 FE·BE가 서로의 작업을 기다리지 않고 개발</li>
           <li><strong>커뮤니티(게시판·댓글)를 DB부터 화면까지 대부분 단독 구현</strong>. 판매용 커스텀 이모티콘을 댓글에 넣는 입력기 포함</li>
           <li>템플릿 선택·데이터 입력·노출 순서 변경이 가능한 메인 CMS와 커머스 어드민(상품·태그·파트너스·쿠폰) 구축</li>
           <li>중첩 JSON을 재귀로 펼치는 엑셀 입출력과 Next 서버리스에서 동작하는 zip 암호화 다운로드 구현</li>
@@ -623,7 +624,7 @@
           <span class="proj-tech">Rust · Tauri 2 · React 19 · SQLite · Supabase</span>
         </div>
         <ul class="bullets">
-          <li>HTTPS 디버그 프록시, API 모킹, 도메인 헬스체크, 모바일 터널링을 <strong>데스크톱 앱 하나로 묶은 로컬 개발 도구</strong> (Windows / macOS / Linux 배포)</li>
+          <li>업무용으로 만든 proxy-tool에서 출발해, HTTPS 디버그 프록시, API 모킹, 도메인 헬스체크, 모바일 터널링을 <strong>데스크톱 앱 하나로 묶은 로컬 개발 도구</strong> (Windows / macOS / Linux 배포)</li>
           <li>Cursor·Claude Code 같은 AI 에이전트가 트래픽을 조회하고 Mock을 설정하는 CLI(<code>hgc</code>)와 Agent Skill 제공</li>
           <li>Supabase Realtime으로 팀 단위 도메인·Mock 규칙을 동기화하고 SQLite FTS5로 트래픽 검색</li>
         </ul>
@@ -680,7 +681,7 @@
           <span class="tag">Docker</span>
           <span class="tag">Tauri 2</span>
           <span class="tag">Prisma</span>
-          <span class="tag">Git</span>
+          <span class="tag">Biome</span>
         </div>
       </div>
     </section>
